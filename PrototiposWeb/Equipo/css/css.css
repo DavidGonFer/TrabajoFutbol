@@ -1,5 +1,6 @@
 body{
     background-color: rgb(233, 248, 234);
+    color: rgb(10, 45, 0);
 }
 
 section{
@@ -17,9 +18,12 @@ a{
     text-decoration: none;
 }
 h1{
-    color: rgb(31, 31, 31);
+    color: rgb(10, 45, 0);
     text-decoration: none;
 }
 #navbarCollapse{
     transition: 0.5s;
+}
+#masterM{
+    font-family: 'Lobster', cursive;
 }
