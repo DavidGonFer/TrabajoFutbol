@@ -1,0 +1,36 @@
+body{
+    background-color: rgb(233, 248, 234);
+    color: rgb(10, 45, 0);
+}
+
+section{
+    margin-top: 5%;
+    width:fit-content;
+    height: fit-content;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.674);
+    padding: 60px;
+    box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.548);
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+h1{
+    color: rgb(10, 45, 0);
+    text-decoration: none;
+}
+#navbarCollapse{
+    transition: 0.5s;
+}
+#masterM{
+    font-family: 'Lobster', cursive;
+}
+#equipoDatos{
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.674);
+}
+#equipoDatos a,#equipoDatos input{
+    margin: auto;
+}

@@ -8,13 +8,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 
 
-    <link rel="stylesheet" href="./css/css.css">
-    <link rel="shortcut icon" type="image/x-icon" href="./img/logoHead.ico" />
+    <link rel="stylesheet" href="{{asset('../resources/css/css.css')}}">
+
+    
+    <link rel="shortcut icon" type="image/x-icon" href="../img/logoHead.ico" />
     <title>MasterManager</title>
 </head>
 
@@ -88,12 +91,31 @@
 
 
     <section class="mx-auto">
-        <div><!--Div obligatorio-->
-            <p class="lead">Master manager te permite llevar el control de tus equipos en la liga!<br>
-                Con funciones como hacerte cargo de las asistencias, entrenamientos,partidos,<br>
-                jugadores, para poder llevar a un nuevo limite tu capacidad como entrenador<br>
-            </p>
-        </div>
+
+            
+            <div id="datos">
+                <h4>Jugadores/s:</h4>
+                <!--CAMBIAR EN VEZ DE EQUIPO PARTIDO-->
+            
+                @foreach($equipos as $equipo)
+                <div>
+                    <form action='{{url("equipos/$equipo->id")}}' method="POST">
+                    @csrf
+                    
+                    <p>Club: {{$equipo['club']}}<br> Categoria: {{$equipo['categoria']}}<br>Temporada: {{$equipo['temporada']}}<br>Deporte: {{$equipo['deporte']}}</p>
+                    <br>
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input type="submit" class="btn btn-danger" value="Eliminar">
+                    <a href={{url("equipos/$equipo->id/edit")}}>Editar</a>
+                   
+                </form>
+                @endforeach  
+                </div>
+                <br>
+            </div>
+            
+
+
     </section>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -105,5 +127,3 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 </body>
-
-</html>

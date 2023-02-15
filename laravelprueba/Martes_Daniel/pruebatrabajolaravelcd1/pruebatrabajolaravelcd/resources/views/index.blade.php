@@ -8,13 +8,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 
 
-    <link rel="stylesheet" href="./css/css.css">
-    <link rel="shortcut icon" type="image/x-icon" href="./img/logoHead.ico" />
+    <link rel="stylesheet" href="{{asset('../resources/css/css.css')}}">
+
+    
+    <link rel="shortcut icon" type="image/x-icon" href="../img/logoHead.ico" />
     <title>MasterManager</title>
 </head>
 
@@ -39,7 +42,7 @@
                         Equipo
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="{{" equipos/create"}}">Crear Equipo</a></li>
+                        <li><a class="dropdown-item" href="{{"equipos/create"}}">Crear Equipo</a></li>
                         <li><a class="dropdown-item" href="#">Visualizar Equipos</a></li>
                     </ul>
                 </div>
@@ -63,11 +66,14 @@
                         <li><a class="dropdown-item" href="#">Visualizar los Entrenamientos</a></li>
                     </ul>
                 </div>
-
-
-                <a class="nav-item nav-link" href="#">Asistencias</a>
-
-
+                <div class="dropdown">
+                    <ul>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Asistencias
+                            </a>
+                        </li>
+                    </ul>
+                </div>
                 <div class="dropdown">
                     <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton5" data-toggle="dropdown"
                         aria-expanded="false">
@@ -89,10 +95,31 @@
 
     <section class="mx-auto">
         <div><!--Div obligatorio-->
-            <p class="lead">Master manager te permite llevar el control de tus equipos en la liga!<br>
-                Con funciones como hacerte cargo de las asistencias, entrenamientos,partidos,<br>
-                jugadores, para poder llevar a un nuevo limite tu capacidad como entrenador<br>
-            </p>
+
+            
+            <div id="equipoDatos">
+                <h4>Equipo/s:</h4>
+                <!--Esto se hace con una plantilla de laravel, ahora no lo puedo hacer-->
+            
+                @foreach($equipos as $equipo)
+                <div>
+                    <form action='{{url("equipos/$equipo->id")}}' method="POST">
+                    @csrf
+                    
+                    <p>Club: {{$equipo['club']}}<br> Categoria: {{$equipo['categoria']}}<br>Temporada: {{$equipo['temporada']}}<br>Deporte: {{$equipo['deporte']}}</p>
+                    <br>
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input type="submit" class="btn btn-danger" value="Eliminar">
+                    <a href={{url("equipos/$equipo->id/edit")}}>Editar</a>
+                   
+                </form>
+                @endforeach  
+                </div>
+                <br>
+            </div>
+            
+
+
         </div>
     </section>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -105,5 +132,3 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 </body>
-
-</html>

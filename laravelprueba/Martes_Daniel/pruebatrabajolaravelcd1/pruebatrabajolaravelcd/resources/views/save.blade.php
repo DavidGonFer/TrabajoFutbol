@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 
 
-    <link rel="stylesheet" href="./css/css.css">
-    <link rel="shortcut icon" type="image/x-icon" href="./img/logoHead.ico" />
+    <link rel="stylesheet" href="{{asset('../resources/css/css.css')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="../img/logoHead.ico" />
     <title>MasterManager</title>
 </head>
 
@@ -39,8 +40,10 @@
                         Equipo
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="{{" equipos/create"}}">Crear Equipo</a></li>
+                        <li><a class="dropdown-item" href="#">Crear Equipo</a></li>
                         <li><a class="dropdown-item" href="#">Visualizar Equipos</a></li>
+                        <li><a class="dropdown-item" href="#">Eliminar los Equipos</a></li>
+                        <li><a class="dropdown-item" href="#">Actualizar los Equipos</a></li>
                     </ul>
                 </div>
                 <div class="dropdown">
@@ -51,6 +54,8 @@
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
                         <li><a class="dropdown-item" href="#crearEquipo">Crear Jugador</a></li>
                         <li><a class="dropdown-item" href="#visualizarEquipo">Visualizar los Jugadores</a></li>
+                        <li><a class="dropdown-item" href="#eliminarEquipo">Eliminar Jugadores</a></li>
+                        <li><a class="dropdown-item" href="#acru">Actualizar los Jugadores</a></li>
                     </ul>
                 </div>
                 <div class="dropdown">
@@ -61,13 +66,21 @@
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
                         <li><a class="dropdown-item" href="#">Crear Entrenamiento</a></li>
                         <li><a class="dropdown-item" href="#">Visualizar los Entrenamientos</a></li>
+                        <li><a class="dropdown-item" href="#">Eliminar Entrenamiento</a></li>
+                        <li><a class="dropdown-item" href="#">Actualizar los Entrenamientos</a></li>
                     </ul>
                 </div>
-
-
-                <a class="nav-item nav-link" href="#">Asistencias</a>
-
-
+                <div class="dropdown">
+                    <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton4" data-toggle="dropdown"
+                        aria-expanded="false">
+                        Asistencias
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
+                        <li><a class="dropdown-item" href="#">Visualizar las Asistencias</a></li>
+                        <li><a class="dropdown-item" href="#">Eliminar Asistencias</a></li>
+                        <li><a class="dropdown-item" href="#">Actualizar las Asistencias</a></li>
+                    </ul>
+                </div>
                 <div class="dropdown">
                     <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton5" data-toggle="dropdown"
                         aria-expanded="false">
@@ -76,6 +89,7 @@
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton5">
                         <li><a class="dropdown-item" href="#">Crear Partido</a></li>
                         <li><a class="dropdown-item" href="#">Visualizar los Partidos</a></li>
+                        <li><a class="dropdown-item" href="#">Actualizar horarios</a></li>
                     </ul>
                 </div>
 
@@ -89,21 +103,34 @@
 
     <section class="mx-auto">
         <div><!--Div obligatorio-->
-            <p class="lead">Master manager te permite llevar el control de tus equipos en la liga!<br>
-                Con funciones como hacerte cargo de las asistencias, entrenamientos,partidos,<br>
-                jugadores, para poder llevar a un nuevo limite tu capacidad como entrenador<br>
-            </p>
-        </div>
-    </section>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-</body>
 
-</html>
+            <div id="crearEquipo">
+                <h4>Crear Equipo:</h4>
+                <form action='{{url("equipos/$equipo->id")}}' method="POST">
+                    @csrf
+                    @if($equipo->id)
+                    <input type="hidden" name="_method" value="PUT">
+                    @endif
+                    <label for="club">Club: </label><br>
+                    <input type="text" id="club" class="form-control" name="club" value="{{$equipo->club}}"><br>
+                    <label for="deporte">Deporte: </label><br>
+                    <input type="text" id="deporte" class="form-control" name="deporte" value="{{$equipo->deporte}}"><br>
+                    <label for="name3">Temporada: </label><br>
+                    <input type="text" id="tempo" class="form-control" name="temporada" value="{{$equipo->temporada}}"><br>
+                    <label for="name3">Categoria: </label><br>
+                    <input type="text" id="tempo" class="form-control"  name="categoria" value="{{$equipo->categoria}}"><br>
+            
+
+                    <button type="submit" class="btn btn-success mb-2" value="Guardar">Crear nuevo equipo</button>
+                </form>
+            </div>
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    </body>
