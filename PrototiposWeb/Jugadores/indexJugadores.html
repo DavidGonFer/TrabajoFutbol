@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 
 
-    <link rel="stylesheet" href="{{asset('../resources/css/css.css')}}">
+    <link rel="stylesheet" href="../css/css.css">
 
     
     <link rel="shortcut icon" type="image/x-icon" href="../img/logoHead.ico" />
@@ -106,7 +106,7 @@
                     <br>
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="submit" class="btn btn-danger" value="Eliminar">
-                    <a href={{url("equipos/$equipo->id/edit")}}>Editar</a>
+                    <a class="btn btn-success" href={{url("equipos/$equipo->id/edit")}}>Editar</a>
                    
                 </form>
                 @endforeach  

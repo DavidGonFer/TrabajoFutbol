@@ -107,72 +107,23 @@
             <div id="crearEntren">
                 <h4>Crear Entrenamiento:</h4>
                 <form>
+                    <label for="idEntre">id: </label><br>
+                    <input type="text" id="idEntre" class="form-control"><br>
+
                     <label for="duracion">Duracion: </label><br>
                     <input type="text" id="duracion" class="form-control"><br>
                     <label for="observaciones">Deporte: </label><br>
                     <input type="text" id="observaciones" class="form-control"><br>
                     <label for="fecha">Fecha y hora: </label><br>
                     <input type="text" id="tempo" class="form-control"><br>
+
+                    <label for="codEntre">Codigo de Entrenamiento: </label><br>
+                    <input type="text" id="codEntre" class="form-control"><br>
 
                     <button type="submit" class="btn btn-success mb-2">Crear nuevo entrenamiento</button>
                 </form>
             </div>
-            <div id="visualizarEntren">
-                <h4>Visualizar Entrenamiento/s:</h4>
-                <br><br><br>
-                <!--Esto se hace con una plantilla de laravel, ahora no lo puedo hacer-->
-            </div>
-            <div id="eliminarEntren">
-                <h4>Eliminar Entren:</h4>
-                <form>
-                    <label for="inlineFormCustomSelect">Equipos:</label>
-                    <select class="custom-select" id="inlineFormCustomSelect">
-                        <option selected>Elige equipo...</option>
-                        <option value="1">Equipo 1</option>
-                        <option value="2">Equipo 2</option>
-                        <option value="3">Equipo 3</option>
-                    </select>
-                    <br><br>
-                    <select class="custom-select" id="inlineFormCustomSelect">
-                        <option selected>Elige entrenamiento...</option>
-                        <option value="1">Entrenamiento 1</option>
-                        <option value="2">Entrenamiento 2</option>
-                        <option value="3">Entrenamiento 3</option>
-                    </select><br><br>
-
-                    <button type="submit" class="btn btn-success mb-2">Eliminar</button>
-                </form>
-            </div>
-            <div id="actualizarEquipo">
-                <h4>Actualizar Entrenamiento:</h4>
-                <form>
-
-                    <label for="inlineFormCustomSelect">Equipos:</label>
-                    <select class="custom-select" id="inlineFormCustomSelect">
-                        <option selected>Elige equipo...</option>
-                        <option value="1">Equipo 1</option>
-                        <option value="2">Equipo 2</option>
-                        <option value="3">Equipo 3</option>
-                    </select>
-
-                    <br><br>
-                    <select class="custom-select" id="inlineFormCustomSelect">
-                        <option selected>Elige entrenamiento...</option>
-                        <option value="1">Entrenamiento 1</option>
-                        <option value="2">Entrenamiento 2</option>
-                        <option value="3">Entrenamiento 3</option>
-                    </select><br>
-
-                    <label for="duracion">Duracion: </label><br>
-                    <input type="text" id="duracion" class="form-control"><br>
-                    <label for="observaciones">Deporte: </label><br>
-                    <input type="text" id="observaciones" class="form-control"><br>
-                    <label for="fecha">Fecha y hora: </label><br>
-                    <input type="text" id="tempo" class="form-control"><br>
-
-                    <button type="submit" class="btn btn-success mb-2">Actualizar Entrenamiento</button>
-                </form>
-            </div>
+            
 
 
         </div>
