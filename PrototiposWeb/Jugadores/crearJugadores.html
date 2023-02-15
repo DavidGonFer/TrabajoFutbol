@@ -97,6 +97,9 @@
             <div id="crearJugador">
                 <h4>Crear Jugador:</h4>
                 <form>
+                    <label for="idjugador">id: </label><br>
+                    <input type="text" id="idjugador" class="form-control"><br>
+
                     <label for="nombre">Nombre: </label><br>
                     <input type="text" id="nombre" class="form-control"><br>
                     <label for="nombre">Apellidos: </label><br>
@@ -108,76 +111,18 @@
                     <label for="obs">Observaciones: </label><br>
                     <input type="text" id="obs" class="form-control"><br>
 
+                    
+
+                    <label for="codConvo">codigo de Convocatoria: </label><br>
+                    <input type="text" id="codConvo" class="form-control"><br>
+
+                    <label for="codjug">codigo de jugador: </label><br>
+                    <input type="text" id="codjug" class="form-control"><br>
+
                     <button type="submit" class="btn btn-success mb-2">Crear nuevo jugador</button>
                 </form>
             </div>
-            <div id="visualizarJugador">
-                <h4>Visualizar Jugador/s:</h4>
-                <br><br><br>
-                <!--Esto se hace con una plantilla de laravel, ahora no lo puedo hacer-->
-            </div>
-            <div id="eliminarJugador">
-                <h4>Eliminar Jugador:</h4>
-                <form>
-                    <label for="inlineFormCustomSelect">Jugadores:</label>
-                    <select class="custom-select" id="inlineFormCustomSelect">
-                        <option selected>Elige equipo...</option>
-                        <option value="1">Equipo 1</option>
-                        <option value="2">Equipo 2</option>
-                        <option value="3">Equipo 3</option>
-                    </select>
-                    <br>
-                    <label for="inlineFormCustomSelect">Jugadores:</label>
-                    <select class="custom-select" id="inlineFormCustomSelect">
-                        <option selected>Elige Jugadores...</option>
-                        <option value="1">Jugador 1</option>
-                        <option value="2">Jugador 2</option>
-                        <option value="3">Jugador 3</option>
-                    </select>
-                    <br>
-                    <button type="submit" class="btn btn-success mb-2">Eliminar</button>
-                </form>
-            </div>
-            <div id="actualizarEquipo">
-                <h4>Actualizar Jugador:</h4>
-                <form>
-
-                    <label for="inlineFormCustomSelect">Equipos:</label>
-                    
-                    <select class="custom-select" id="inlineFormCustomSelect">
-                        <option selected>Elige equipo...</option>
-                        <option value="1">Equipo 1</option>
-                        <option value="2">Equipo 2</option>
-                        <option value="3">Equipo 3</option>
-                    </select>
-                    <br>
-                    <label for="inlineFormCustomSelect">Jugadores:</label>
-                    <select class="custom-select" id="inlineFormCustomSelect">
-                        <option selected>Elige Jugadores...</option>
-                        <option value="1">Jugador 1</option>
-                        <option value="2">Jugador 2</option>
-                        <option value="3">Jugador 3</option>
-                    </select>
-                    <br>
-
-                    
-                        <label for="nombre">Nombre: </label><br>
-                        <input type="text" id="nombre" class="form-control"><br>
-                        <label for="nombre">Apellidos: </label><br>
-                        <input type="text" id="nombre" class="form-control"><br>
-                        <label for="telefono">Telefono: </label><br>
-                        <input type="tel" id="telefono" class="form-control"><br>
-                        <label for="naci">Fecha Nacimiento: </label><br>
-                        <input type="date" id="naci" class="form-control"><br>
-                        <label for="obs">Observaciones: </label><br>
-                        <input type="text" id="obs" class="form-control"><br>
-    
-                        <button type="submit" class="btn btn-success mb-2">Actualizar jugador</button>
-                   
-                </form>
-            </div>
-
-
+            
         </div>
     </section>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
