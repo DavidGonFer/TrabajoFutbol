@@ -9,22 +9,22 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 
 
     <link rel="stylesheet" href="{{asset('../resources/css/css.css')}}">
 
     
-    <link rel="shortcut icon" type="image/x-icon" href="../img/logoHead.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('../resources/img//logoHead.ico')}}" />
     <title>MasterManager</title>
 </head>
 
-<body>
-    <nav class="navbar bg-success navbar-expand* navbar-light d-flex">
+<body class=" bg-transparent ">
+    <nav class="navbar  navbar-expand* navbar-dark d-flex">
 
-        <img src="../img/logoHeader.png" alt="Logo de futbol" class="pl-2 float-right">
+        <img src="{{asset('../resources/img/logoHeader.png')}}" alt="Logo de futbol" class="pl-2 float-right">
         <a class="nav-item nav-link" type="button" href="../index.html">
             <h1 id="masterM">MasterManager</h1>
         </a>
@@ -89,26 +89,29 @@
 
 
 
-
+   
     <section class="mx-auto">
 
             
-            <div id="datos">
-                <h4>Equipo/s:</h4>
-            
+            <div id="datos" >
+                <h4>Equipo/s:</h4><br>
+                <div class="grid-container">
+                
                 @foreach($equipos as $equipo)
-                <div>
-                    <form action='{{url("equipos/$equipo->id")}}' method="POST">
+                <div class="grid-item">
+                    <form  action='{{url("equipos/$equipo->id")}}' method="POST">
                     @csrf
                     
-                    <p>Id: {{$equipo['id']}}<br>Club: {{$equipo['club']}}<br> Categoria: {{$equipo['categoria']}}<br>Temporada: {{$equipo['temporada']}}<br>Deporte: {{$equipo['deporte']}}</p>
-                    <br>
+                    <p><strong>Id:</strong> {{$equipo['id']}}<br><strong>Club:</strong> {{$equipo['club']}}<br><strong>Categoria:</strong> {{$equipo['categoria']}}<br><strong>Temporada:</strong> {{$equipo['temporada']}}<br><strong>Deporte:</strong> {{$equipo['deporte']}}</p>
+                    
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="submit" class="btn btn-danger" value="Eliminar">
-                    <a href={{url("equipos/$equipo->id/edit")}} class="btn btn-success">Editar</a>
-                   
-                </form>
+                    <a href={{url("equipos/$equipo->id/edit")}} class="btn btn-warning">Editar</a>
+                    
+                    </form>
+                </div>
                 @endforeach  
+                
                 </div>
                 <br>
             </div>
