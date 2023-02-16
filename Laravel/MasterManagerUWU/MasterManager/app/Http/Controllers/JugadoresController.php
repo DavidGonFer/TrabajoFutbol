@@ -95,6 +95,7 @@ class JugadoresController extends Controller
         $jugadores -> telefono = $request -> telefono;
         $jugadores -> observaciones = $request -> observaciones;
         $jugadores -> save();
+        return Redirect::to('jugadores');
     }   
 
     /**

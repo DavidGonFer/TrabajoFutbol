@@ -102,8 +102,8 @@
                 <div class="grid-itemjug">
                     <form action='{{url("jugadores/$jugador->id")}}' method="POST">
                     @csrf
-                    
-                    <p>Nombre: {{$jugador['nombre']}} Apellido: {{$jugador['apellidos']}}</p>
+                    <strong></strong>
+                    <p><strong>Nombre:</strong> {{$jugador['nombre']}} <strong>Apellido:</strong> {{$jugador['apellidos']}}</p>
                     
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="submit" class="btn btn-danger float-right" value="Eliminar">
