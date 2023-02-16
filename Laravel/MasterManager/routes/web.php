@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\EquiposController;
 use App\Http\Controllers\JugadoresController;
+use App\Http\Controllers\PartidoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,3 +18,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('equipos',EquiposController::class);
 Route::resource('jugadores',JugadoresController::class);
+Route::resource('partidos',PartidoController::class);
