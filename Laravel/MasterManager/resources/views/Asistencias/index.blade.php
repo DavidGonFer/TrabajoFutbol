@@ -155,7 +155,7 @@
                     <input type="text" id="codEntre" class="form-control" name="cod_entrenamiento" value="{{$entrenamientos->cod_entrenamiento}}"><br>
                     <label for="codEntre" >Codigo del Jugador: </label><br>
                     <input type="text" id="codJug" class="form-control" name="cod_jugador" value="{{$entrenamientos->cod_entrenamiento}}"><br>
-                    <label for="Asistencia">Asistencia: </label><br>
+                    <label for="Asistencia">Asistencia(SI/NO): </label><br>
                     <input type="text" id="asistencia" class="form-control" name="asistencia" value="{{$entrenamientos->duracion}}"><br>
             </div>
             
