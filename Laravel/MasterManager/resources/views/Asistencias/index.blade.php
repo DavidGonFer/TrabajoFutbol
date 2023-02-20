@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="{{asset('../resources/css/css.css')}}">
 
     
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('../resources/img//logoHead.ico')}}" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('../resources/img/logoHead.ico')}}" />
     <title>MasterManager</title>
 </head>
 
@@ -89,29 +89,29 @@
 
 
 
-
-
+   
     <section class="mx-auto">
 
             
-            <div id="datos">
-                <h4>Jugadores/s:</h4>
-                <div class="grid-containerjug">
-            
-                @foreach($jugadores as $jugador)
-                <div class="grid-itemjug">
-                    <form action='{{url("jugadores/$jugador->id")}}' method="POST">
+            <div id="datos" >
+                <h4>Equipo/s:</h4><br>
+                <div class="grid-container">
+                
+                @foreach($equipos as $equipo)
+                <div class="grid-item">
+                    <form  action='{{url("equipos/$equipo->id")}}' method="POST">
                     @csrf
-                    <strong></strong>
-                    <p><strong>Nombre:</strong> {{$jugador['nombre']}} <strong>Apellido:</strong> {{$jugador['apellidos']}}</p>
+                    
+                    <p><strong>Id:</strong> {{$equipo['id']}}<br><strong>Club:</strong> {{$equipo['club']}}<br><strong>Categoria:</strong> {{$equipo['categoria']}}<br><strong>Temporada:</strong> {{$equipo['temporada']}}<br><strong>Deporte:</strong> {{$equipo['deporte']}}</p>
                     
                     <input type="hidden" name="_method" value="DELETE">
-                    <input type="submit" class="btn btn-danger float-right" value="Eliminar">
-                    <a class="btn btn-warning float-right mx-1" href={{url("jugadores/$jugador->id/edit")}}>Editar</a>
-                   
-                </form>
+                    <input type="submit" class="btn btn-danger" value="Eliminar">
+                    <a href={{url("equipos/$equipo->id/edit")}} class="btn btn-warning">Editar</a>
+                    
+                    </form>
                 </div>
                 @endforeach  
+                
                 </div>
                 <br>
             </div>

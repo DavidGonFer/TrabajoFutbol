@@ -9,22 +9,20 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 
 
-    <link rel="stylesheet" href="{{asset('../resources/css/css.css')}}">
-
-    
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('../resources/img//logoHead.ico')}}" />
+    <link rel="stylesheet" href="../css/css.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../img/logoHead.ico" />
     <title>MasterManager</title>
 </head>
 
-<body class=" bg-transparent ">
-    <nav class="navbar  navbar-expand* navbar-dark d-flex">
+<body>
+    <nav class="navbar bg-success navbar-expand* navbar-light d-flex">
 
-        <img src="{{asset('../resources/img/logoHeader.png')}}" alt="Logo de futbol" class="pl-2 float-right">
+        <img src="../img/logoHeader.png" alt="Logo de futbol" class="pl-2 float-right">
         <a class="nav-item nav-link" type="button" href="../index.html">
             <h1 id="masterM">MasterManager</h1>
         </a>
@@ -42,8 +40,8 @@
                         Equipo
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="{{'equipos/create'}}">Crear Equipo</a></li>
-                        <li><a class="dropdown-item" href="{{'equipos'}}">Visualizar Equipos</a></li>
+                        <li><a class="dropdown-item" href="{{" equipos/create"}}">Crear Equipo</a></li>
+                        <li><a class="dropdown-item" href="#">Visualizar Equipos</a></li>
                     </ul>
                 </div>
                 <div class="dropdown">
@@ -52,8 +50,8 @@
                         Jugadores
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                        <li><a class="dropdown-item" href="{{'jugadores/create'}}">Crear Jugador</a></li>
-                        <li><a class="dropdown-item" href="{{'jugadores'}}">Visualizar los Jugadores</a></li>
+                        <li><a class="dropdown-item" href="#crearEquipo">Crear Jugador</a></li>
+                        <li><a class="dropdown-item" href="#visualizarEquipo">Visualizar los Jugadores</a></li>
                     </ul>
                 </div>
                 <div class="dropdown">
@@ -62,8 +60,8 @@
                         Entrenamientos
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
-                        <li><a class="dropdown-item" href="{{'entrenamientos/create'}}">Crear Entrenamiento</a></li>
-                        <li><a class="dropdown-item" href="{{'entrenamientos'}}">Visualizar los Entrenamientos</a></li>
+                        <li><a class="dropdown-item" href="#">Crear Entrenamiento</a></li>
+                        <li><a class="dropdown-item" href="#">Visualizar los Entrenamientos</a></li>
                     </ul>
                 </div>
 
@@ -90,34 +88,28 @@
 
 
 
-
     <section class="mx-auto">
+        <div><!--Div obligatorio-->
+            <h4>Crear Equipo:</h4>
+            <form action='{{url("equipos/$equipo->id")}}' method="POST">
+                @csrf
+                @if($equipo->id)
+                <input type="hidden" name="_method" value="PUT">
+                @endif
+                <label for="club">Id: </label><br>
+                <input type="text" id="club" class="form-control" name="club" value="{{$equipo->id}}"><br>
+                <label for="club">Club: </label><br>
+                <input type="text" id="club" class="form-control" name="club" value="{{$equipo->club}}"><br>
+                <label for="deporte">Deporte: </label><br>
+                <input type="text" id="deporte" class="form-control" name="deporte" value="{{$equipo->deporte}}"><br>
+                <label for="name3">Temporada: </label><br>
+                <input type="text" id="tempo" class="form-control" name="temporada" value="{{$equipo->temporada}}"><br>
+                <label for="name3">Categoria: </label><br>
+                <input type="text" id="tempo" class="form-control"  name="categoria" value="{{$equipo->categoria}}"><br>
+        
 
-            
-            <div id="datos">
-                <h4>Jugadores/s:</h4>
-                <div class="grid-containerjug">
-            
-                @foreach($jugadores as $jugador)
-                <div class="grid-itemjug">
-                    <form action='{{url("jugadores/$jugador->id")}}' method="POST">
-                    @csrf
-                    <strong></strong>
-                    <p><strong>Nombre:</strong> {{$jugador['nombre']}} <strong>Apellido:</strong> {{$jugador['apellidos']}}</p>
-                    
-                    <input type="hidden" name="_method" value="DELETE">
-                    <input type="submit" class="btn btn-danger float-right" value="Eliminar">
-                    <a class="btn btn-warning float-right mx-1" href={{url("jugadores/$jugador->id/edit")}}>Editar</a>
-                   
-                </form>
-                </div>
-                @endforeach  
-                </div>
-                <br>
-            </div>
-            
-
-
+                <button type="submit" class="btn btn-success mb-2" value="Guardar">Crear nuevo equipo</button>
+        </div>
     </section>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -129,3 +121,5 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 </body>
+
+</html>
