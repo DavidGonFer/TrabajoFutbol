@@ -4,6 +4,7 @@ use App\Http\Controllers\EntrenamientoController;
 use App\Http\Controllers\EquiposController;
 use App\Http\Controllers\JugadoresController;
 use App\Http\Controllers\PartidoController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
