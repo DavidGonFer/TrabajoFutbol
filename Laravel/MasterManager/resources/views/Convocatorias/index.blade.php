@@ -17,14 +17,14 @@
     <link rel="stylesheet" href="{{asset('../resources/css/css.css')}}">
 
     
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('../resources/img//logoHead.ico')}}" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('../resources/img/logoHead.ico')}}" />
     <title>MasterManager</title>
 </head>
 
 <body class=" bg-transparent ">
     <nav class="navbar  navbar-expand* navbar-dark d-flex">
 
-        <img  src="{{asset('../resources/img/logoHeader.png')}}" alt="Logo de futbol" class="pl-2 float-right">
+        <img src="{{asset('../resources/img/logoHeader.png')}}" alt="Logo de futbol" class="pl-2 float-right">
         <a class="nav-item nav-link" type="button" href="../index.html">
             <h1 id="masterM">MasterManager</h1>
         </a>
@@ -83,34 +83,41 @@
                 </div>
 
             </div>
-    
-        </div> 
+
+        </div>
     </nav>
 
 
 
+   
+    <section class="mx-auto">
+
+            
+            <div id="datos" >
+                <h4>Equipo/s:</h4><br>
+                <div class="grid-container">
+                
+                @foreach($equipos as $equipo)
+                <div class="grid-item">
+                    <form  action='{{url("equipos/$equipo->id")}}' method="POST">
+                    @csrf
+                    
+                    <p><strong>Id:</strong> {{$equipo['id']}}<br><strong>Club:</strong> {{$equipo['club']}}<br><strong>Categoria:</strong> {{$equipo['categoria']}}<br><strong>Temporada:</strong> {{$equipo['temporada']}}<br><strong>Deporte:</strong> {{$equipo['deporte']}}</p>
+                    
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input type="submit" class="btn btn-danger" value="Eliminar">
+                    <a href={{url("equipos/$equipo->id/edit")}} class="btn btn-warning">Editar</a>
+                    
+                    </form>
+                </div>
+                @endforeach  
+                
+                </div>
+                <br>
+            </div>
+            
 
 
-    <section class="mx-auto" id="sectionCrear">
-        <div id="formularioCrear"><!--Div obligatorio-->
-            <h4>Crear Equipo:</h4>
-            <form action='{{url("equipos/$equipo->id")}}' method="POST">
-                @csrf
-                @if($equipo->id)
-                <input type="hidden" name="_method" value="PUT">
-                @endif
-                <label for="club">Id: </label><br>
-                <input type="text" id="club" class="form-control"  value="{{$equipo->id}}"><br>
-                <label for="club">Club: </label><br>
-                <input type="text" id="club" class="form-control" name="club" value="{{$equipo->club}}"><br>
-                <label for="deporte">Deporte: </label><br>
-                <input type="text" id="deporte" class="form-control" name="deporte" value="{{$equipo->deporte}}"><br>
-                <label for="name3">Temporada: </label><br>
-                <input type="text" id="tempo" class="form-control" name="temporada" value="{{$equipo->temporada}}"><br>
-                <label for="name3">Categoria: </label><br>
-                <input type="text" id="tempo" class="form-control"  name="categoria" value="{{$equipo->categoria}}"><br>
-                <button type="submit" class="btn btn-success mb-2" value="Guardar">Crear nuevo equipo</button>
-        </div>
     </section>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -122,5 +129,3 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 </body>
-
-</html>

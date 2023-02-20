@@ -22,9 +22,9 @@
 </head>
 
 <body class=" bg-transparent ">
-    <nav class="navbar bg-success navbar-expand* navbar-light d-flex">
+    <nav class="navbar  navbar-expand* navbar-dark d-flex">
 
-        <img src="../img/logoHeader.png" alt="Logo de futbol" class="pl-2 float-right">
+        <img src="{{asset('../resources/img/logoHeader.png')}}" alt="Logo de futbol" class="pl-2 float-right">
         <a class="nav-item nav-link" type="button" href="../index.html">
             <h1 id="masterM">MasterManager</h1>
         </a>

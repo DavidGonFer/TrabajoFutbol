@@ -9,20 +9,22 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 
 
-    <link rel="stylesheet" href="../css/css.css">
-    <link rel="shortcut icon" type="image/x-icon" href="../img/logoHead.ico" />
+    <link rel="stylesheet" href="{{asset('../resources/css/css.css')}}">
+
+    
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('../resources/img//logoHead.ico')}}" />
     <title>MasterManager</title>
 </head>
 
-<body>
-    <nav class="navbar bg-success navbar-expand* navbar-light d-flex">
+<body class=" bg-transparent ">
+    <nav class="navbar  navbar-expand* navbar-dark d-flex">
 
-        <img src="../img/logoHeader.png" alt="Logo de futbol" class="pl-2 float-right">
+        <img src="{{asset('../resources/img/logoHeader.png')}}" alt="Logo de futbol" class="pl-2 float-right">
         <a class="nav-item nav-link" type="button" href="../index.html">
             <h1 id="masterM">MasterManager</h1>
         </a>
@@ -87,8 +89,13 @@
 
 
 
-    <section class="mx-auto">
-            <div id="crearPartido">
+
+
+
+
+
+    <section class="mx-auto" id="sectionCrear">
+            <div id="formularioCrear">
                 <h4>Crear Partido:</h4>
                 <form action='{{url("partidos/$partidos->id")}}' method="POST">
                     @csrf

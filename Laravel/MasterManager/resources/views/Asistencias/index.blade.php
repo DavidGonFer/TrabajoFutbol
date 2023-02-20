@@ -24,7 +24,7 @@
 <body class=" bg-transparent ">
     <nav class="navbar  navbar-expand* navbar-dark d-flex">
 
-        <img  src="{{asset('../resources/img/logoHeader.png')}}" alt="Logo de futbol" class="pl-2 float-right">
+        <img src="{{asset('../resources/img/logoHeader.png')}}" alt="Logo de futbol" class="pl-2 float-right">
         <a class="nav-item nav-link" type="button" href="../index.html">
             <h1 id="masterM">MasterManager</h1>
         </a>
@@ -83,33 +83,84 @@
                 </div>
 
             </div>
-    
-        </div> 
+
+        </div><div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="btn-group dropright">
+                <div class="dropdown">
+                    <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown"
+                        aria-expanded="false">
+                        Equipo
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="{{'equipos/create'}}">Crear Equipo</a></li>
+                        <li><a class="dropdown-item" href="{{'equipos'}}">Visualizar Equipos</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown"
+                        aria-expanded="false">
+                        Jugadores
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                        <li><a class="dropdown-item" href="{{'jugadores/create'}}">Crear Jugador</a></li>
+                        <li><a class="dropdown-item" href="{{'jugadores'}}">Visualizar los Jugadores</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton3" data-toggle="dropdown"
+                        aria-expanded="false">
+                        Entrenamientos
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
+                        <li><a class="dropdown-item" href="{{'entrenamientos/create'}}">Crear Entrenamiento</a></li>
+                        <li><a class="dropdown-item" href="{{'entrenamientos'}}">Visualizar los Entrenamientos</a></li>
+                    </ul>
+                </div>
+
+
+                <a class="nav-item nav-link" href="#">Asistencias</a>
+
+
+                <div class="dropdown">
+                    <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton5" data-toggle="dropdown"
+                        aria-expanded="false">
+                        Partido
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton5">
+                        <li><a class="dropdown-item" href="#">Crear Partido</a></li>
+                        <li><a class="dropdown-item" href="#">Visualizar los Partidos</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
     </nav>
 
 
 
 
+    <section class="mx-auto">
+        <div><!--Div obligatorio-->
 
-    <section class="mx-auto" id="sectionCrear">
-        <div id="formularioCrear"><!--Div obligatorio-->
-            <h4>Crear Equipo:</h4>
-            <form action='{{url("equipos/$equipo->id")}}' method="POST">
-                @csrf
-                @if($equipo->id)
-                <input type="hidden" name="_method" value="PUT">
-                @endif
-                <label for="club">Id: </label><br>
-                <input type="text" id="club" class="form-control"  value="{{$equipo->id}}"><br>
-                <label for="club">Club: </label><br>
-                <input type="text" id="club" class="form-control" name="club" value="{{$equipo->club}}"><br>
-                <label for="deporte">Deporte: </label><br>
-                <input type="text" id="deporte" class="form-control" name="deporte" value="{{$equipo->deporte}}"><br>
-                <label for="name3">Temporada: </label><br>
-                <input type="text" id="tempo" class="form-control" name="temporada" value="{{$equipo->temporada}}"><br>
-                <label for="name3">Categoria: </label><br>
-                <input type="text" id="tempo" class="form-control"  name="categoria" value="{{$equipo->categoria}}"><br>
-                <button type="submit" class="btn btn-success mb-2" value="Guardar">Crear nuevo equipo</button>
+            <div id="crearEntren">
+                <h4>Crear Entrenamiento:</h4>
+                <form action='{{url("entrenamientos/$entrenamientos->id")}}' method="POST">
+                    @csrf
+                    @if($entrenamientos->id)
+                    <input type="hidden" name="_method" value="PUT">
+                    @endif 
+                    <label for="idEntre">id: </label><br>
+                    <label for="codEntre" >Codigo de Entrenamiento: </label><br>
+                    <input type="text" id="codEntre" class="form-control" name="cod_entrenamiento" value="{{$entrenamientos->cod_entrenamiento}}"><br>
+                    <label for="codEntre" >Codigo del Jugador: </label><br>
+                    <input type="text" id="codJug" class="form-control" name="cod_jugador" value="{{$entrenamientos->cod_entrenamiento}}"><br>
+                    <label for="Asistencia">Asistencia: </label><br>
+                    <input type="text" id="asistencia" class="form-control" name="asistencia" value="{{$entrenamientos->duracion}}"><br>
+            </div>
+            
+
+
         </div>
     </section>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
