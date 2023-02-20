@@ -42,8 +42,8 @@
                         Equipo
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="{{" equipos/create"}}">Crear Equipo</a></li>
-                        <li><a class="dropdown-item" href="#">Visualizar Equipos</a></li>
+                        <li><a class="dropdown-item" href="{{'equipos/create'}}">Crear Equipo</a></li>
+                        <li><a class="dropdown-item" href="{{'equipos'}}">Visualizar Equipos</a></li>
                     </ul>
                 </div>
                 <div class="dropdown">
@@ -52,8 +52,8 @@
                         Jugadores
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                        <li><a class="dropdown-item" href="#crearEquipo">Crear Jugador</a></li>
-                        <li><a class="dropdown-item" href="#visualizarEquipo">Visualizar los Jugadores</a></li>
+                        <li><a class="dropdown-item" href="{{'jugadores/create'}}">Crear Jugador</a></li>
+                        <li><a class="dropdown-item" href="{{'jugadores'}}">Visualizar los Jugadores</a></li>
                     </ul>
                 </div>
                 <div class="dropdown">
@@ -62,8 +62,8 @@
                         Entrenamientos
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
-                        <li><a class="dropdown-item" href="#">Crear Entrenamiento</a></li>
-                        <li><a class="dropdown-item" href="#">Visualizar los Entrenamientos</a></li>
+                        <li><a class="dropdown-item" href="{{'entrenamientos/create'}}">Crear Entrenamiento</a></li>
+                        <li><a class="dropdown-item" href="{{'entrenamientos'}}">Visualizar los Entrenamientos</a></li>
                     </ul>
                 </div>
 
@@ -83,8 +83,8 @@
                 </div>
 
             </div>
-
-        </div>
+    
+        </div> 
     </nav>
 
 

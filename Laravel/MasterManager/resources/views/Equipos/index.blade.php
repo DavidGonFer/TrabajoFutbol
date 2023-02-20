@@ -35,7 +35,8 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="btn-group dropright">
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="btn-group dropright">
                 <div class="dropdown">
                     <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown"
                         aria-expanded="false">
