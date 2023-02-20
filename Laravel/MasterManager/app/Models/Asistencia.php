@@ -13,4 +13,11 @@ class Asistencia extends Model
         'cod_jugador',
         'asistencia',
     ];
+    public function jugadores(){
+        return $this->belongsTo(Jugadore::class);
+    } 
+
+    public function entrenamientos(){
+        return $this->hasMany(Entrenamiento::class);
+    }
 }

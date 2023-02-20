@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Jugadore;
+use App\Models\Equipo;
 use Illuminate\Support\Facades\Redirect;
 class JugadoresController extends Controller
 {

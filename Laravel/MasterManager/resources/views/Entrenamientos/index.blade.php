@@ -102,7 +102,7 @@
                     <form action='{{url("entrenamientos/$entrenamiento->id")}}' method="POST">
                     @csrf
                     
-                    <p>Codigo_Entrenamiento: {{$entrenamiento['cod_entrenamiento']}}<br> Duracion: {{$entrenamiento['duracion']}}<br>Fecha_hora: {{$entrenamiento['fecha_hora']}}</p>
+                    <p>Codigo_Entrenamiento: {{$entrenamiento['cod_entrenamiento']}}<br> Duracion: {{$entrenamiento['duracion']}}<br>Fecha_hora: {{$entrenamiento['fecha_hora']}} </p>
                     <br>
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="submit" class="btn btn-danger" value="Eliminar">

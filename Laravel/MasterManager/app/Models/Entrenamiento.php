@@ -14,4 +14,8 @@ class Entrenamiento extends Model
         'fecha_hora',
         'duracion',
     ];
+    public function jugadores(){
+        return $this->belongsTo(Entrenamiento::class,'cod_jugador');
+    }
+
 }

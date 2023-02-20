@@ -14,4 +14,10 @@ class Equipo extends Model
         'deporte',
         'temporada',
     ];
+    public function jugadores(){
+        return $this->hasMany(Jugadore::class);
+    }
+    public function partidos(){
+        return $this->hasMany(Partido::class);
+    }
 }

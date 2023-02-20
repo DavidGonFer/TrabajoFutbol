@@ -102,7 +102,7 @@
                     <form  action='{{url("equipos/$equipo->id")}}' method="POST">
                     @csrf
                     
-                    <p><strong>Id:</strong> {{$equipo['id']}}<br><strong>Club:</strong> {{$equipo['club']}}<br><strong>Categoria:</strong> {{$equipo['categoria']}}<br><strong>Temporada:</strong> {{$equipo['temporada']}}<br><strong>Deporte:</strong> {{$equipo['deporte']}}</p>
+                    <p><strong>Id:</strong> {{$equipo['id']}}<br><strong>Club:</strong> {{$equipo['club']}}<br><strong>Categoria:</strong> {{$equipo['categoria']}}<br><strong>Temporada:</strong> {{$equipo['temporada']}}<br><strong>Deporte:</strong> {{$equipo['deporte']}} </p>
                     
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="submit" class="btn btn-danger" value="Eliminar">

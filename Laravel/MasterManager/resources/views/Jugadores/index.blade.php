@@ -97,14 +97,11 @@
             <div id="datos">
                 <h4>Jugadores/s:</h4>
                 <div class="grid-containerjug">
-            
                 @foreach($jugadores as $jugador)
                 <div class="grid-itemjug">
                     <form action='{{url("jugadores/$jugador->id")}}' method="POST">
                     @csrf
-                    <strong></strong>
-                    <p><strong>Nombre:</strong> {{$jugador['nombre']}} <strong>Apellido:</strong> {{$jugador['apellidos']}}</p>
-                    
+                    <p><strong>Nombre:</strong> {{$jugador['nombre']}} <strong>Apellido:</strong> {{$jugador['apellidos']}} </p>
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="submit" class="btn btn-danger float-right" value="Eliminar">
                     <a class="btn btn-warning float-right mx-1" href={{url("jugadores/$jugador->id/edit")}}>Editar</a>
