@@ -20,6 +20,7 @@ section {
     background-color: #0a4305;
     padding: 20px;
     box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.697);
+    overflow: hidden;
 }
 
 a {
@@ -82,6 +83,22 @@ a:hover {
     font-weight: 300;
 }
 
+#inicio{
+    font-size:30px;
+
+}
+#imgentrenador{
+    position: relative;
+    display: block;
+    max-width:385px;
+    max-height:442px;
+    width: 30%;
+    height: 30%;
+    float: right;
+    border-radius: 20px;
+    object-fit: contain;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.697);
+}
 h1 {
     color: aliceblue;
     text-decoration: none;
@@ -101,18 +118,38 @@ h1:hover{
     font-family: 'Lobster', cursive;
 }
 
-#datos {
+#datosform {
     color: aliceblue;
     border-radius: 30px;
     padding: 10px;
     background-color: rgb(19, 88, 0);
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.697);
+    min-height: fit-content;
+    min-width: fit-content;
+    
+}
+#datosinicio {
+    color: aliceblue;
+    border-radius: 30px;
+    padding: 10px;
+    background-color: rgb(19, 88, 0);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.697);
+    min-height: fit-content;
+    min-width: fit-content;
+    
 }
 
 #datos a,
 #datos input {
     margin: auto;
 }
-#formularioCrear{
-    color: aliceblue;
+
+#formularioCrear input{
+   
+    width: 100%;
+    
+}
+#sectionCrear{
+    width: 30%;
+    
 }
