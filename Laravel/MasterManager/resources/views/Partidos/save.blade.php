@@ -9,20 +9,22 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 
 
-    <link rel="stylesheet" href="../css/css.css">
-    <link rel="shortcut icon" type="image/x-icon" href="../img/logoHead.ico" />
+    <link rel="stylesheet" href="{{asset('../resources/css/css.css')}}">
+
+    
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('../resources/img//logoHead.ico')}}" />
     <title>MasterManager</title>
 </head>
 
-<body>
-    <nav class="navbar bg-success navbar-expand* navbar-light d-flex">
+<body class=" bg-transparent ">
+    <nav class="navbar  navbar-expand* navbar-dark d-flex">
 
-        <img src="../img/logoHeader.png" alt="Logo de futbol" class="pl-2 float-right">
+        <img src="{{asset('../resources/img/logoHeader.png')}}" alt="Logo de futbol" class="pl-2 float-right">
         <a class="nav-item nav-link" type="button" href="../index.html">
             <h1 id="masterM">MasterManager</h1>
         </a>
@@ -40,8 +42,8 @@
                         Equipo
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="{{" equipos/create"}}">Crear Equipo</a></li>
-                        <li><a class="dropdown-item" href="#">Visualizar Equipos</a></li>
+                        <li><a class="dropdown-item" href="{{'equipos/create'}}">Crear Equipo</a></li>
+                        <li><a class="dropdown-item" href="{{'equipos'}}">Visualizar Equipos</a></li>
                     </ul>
                 </div>
                 <div class="dropdown">
@@ -50,8 +52,8 @@
                         Jugadores
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                        <li><a class="dropdown-item" href="#crearEquipo">Crear Jugador</a></li>
-                        <li><a class="dropdown-item" href="#visualizarEquipo">Visualizar los Jugadores</a></li>
+                        <li><a class="dropdown-item" href="{{'jugadores/create'}}">Crear Jugador</a></li>
+                        <li><a class="dropdown-item" href="{{'jugadores'}}">Visualizar los Jugadores</a></li>
                     </ul>
                 </div>
                 <div class="dropdown">
@@ -60,8 +62,8 @@
                         Entrenamientos
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
-                        <li><a class="dropdown-item" href="#">Crear Entrenamiento</a></li>
-                        <li><a class="dropdown-item" href="#">Visualizar los Entrenamientos</a></li>
+                        <li><a class="dropdown-item" href="{{'entrenamientos/create'}}">Crear Entrenamiento</a></li>
+                        <li><a class="dropdown-item" href="{{'entrenamientos'}}">Visualizar los Entrenamientos</a></li>
                     </ul>
                 </div>
 
@@ -75,7 +77,7 @@
                         Partido
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton5">
-                        <li><a class="dropdown-item" href="{{"partidos/create"}}">Crear Partido</a></li>
+                        <li><a class="dropdown-item" href="#">Crear Partido</a></li>
                         <li><a class="dropdown-item" href="#">Visualizar los Partidos</a></li>
                     </ul>
                 </div>
@@ -87,8 +89,13 @@
 
 
 
-    <section class="mx-auto">
-            <div id="crearPartido">
+
+
+
+
+
+    <section class="mx-auto" id="sectionCrear">
+            <div id="formularioCrear">
                 <h4>Crear Partido:</h4>
                 <form action='{{url("partidos/$partidos->id")}}' method="POST">
                     @csrf

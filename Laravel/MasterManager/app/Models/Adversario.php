@@ -9,9 +9,12 @@ class Adversario extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'club',
+        'clubs',
         'categoria',
         'deporte',
         'temporada',
     ];
+    public function adversarios(){
+        return $this->hasOne(Partido::class);
+    }
 }

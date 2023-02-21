@@ -19,6 +19,14 @@ class PartidoController extends Controller
             'partidos'=>$partidos
         ]);
             
+        $partidos= Partido::where('club','equipos')->get()
+        ->with('partidos')
+        ->get()
+        ->toArray();
+        $partidos= Partido::where('club','adversarios')->get()
+        ->with('partidos')
+        ->get()
+        ->toArray();
     }
 
     /**

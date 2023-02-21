@@ -13,4 +13,11 @@ class Asistencia extends Model
         'cod_jugador',
         'asistencia',
     ];
+    public function jugadores(){
+        return $this->hasOne(Jugadore::class,'cod_jugador','cod_jugador');
+    } 
+
+    public function entrenamientos(){
+        return $this->hasOne(Entrenamiento::class,'cod_entrenamiento','cod_entrenamiento');
+    }
 }

@@ -17,4 +17,18 @@ class Jugadore extends Model
         'nombre',
         'fecha_nacimiento',
     ];
+    public function equipos(){
+        return $this->belongsTo(Equipo::class);
+    }
+    public function asistencia(){
+        return $this->hasMany(Asistencia::class);
+    }
+
+    public function convocatoria(){
+        return $this->hasMany(Convocatoria::class);
+    }
+    public function entrenamientos(){
+        return $this->belongsTo(Entrenamiento::class,'id','id');
+    }
+
 }

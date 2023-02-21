@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="{{asset('../resources/css/css.css')}}">
 
     
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('../resources/img//logoHead.ico')}}" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('../resources/img/logoHead.ico')}}" />
     <title>MasterManager</title>
 </head>
 
@@ -35,6 +35,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="btn-group dropright">
                 <div class="dropdown">
                     <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown"
@@ -42,8 +43,8 @@
                         Equipo
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="{{" equipos/create"}}">Crear Equipo</a></li>
-                        <li><a class="dropdown-item" href="#">Visualizar Equipos</a></li>
+                        <li><a class="dropdown-item" href="{{'equipos/create'}}">Crear Equipo</a></li>
+                        <li><a class="dropdown-item" href="{{'equipos'}}">Visualizar Equipos</a></li>
                     </ul>
                 </div>
                 <div class="dropdown">
@@ -52,8 +53,8 @@
                         Jugadores
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                        <li><a class="dropdown-item" href="#crearEquipo">Crear Jugador</a></li>
-                        <li><a class="dropdown-item" href="#visualizarEquipo">Visualizar los Jugadores</a></li>
+                        <li><a class="dropdown-item" href="{{'jugadores/create'}}">Crear Jugador</a></li>
+                        <li><a class="dropdown-item" href="{{'jugadores'}}">Visualizar los Jugadores</a></li>
                     </ul>
                 </div>
                 <div class="dropdown">
@@ -62,8 +63,8 @@
                         Entrenamientos
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
-                        <li><a class="dropdown-item" href="#">Crear Entrenamiento</a></li>
-                        <li><a class="dropdown-item" href="#">Visualizar los Entrenamientos</a></li>
+                        <li><a class="dropdown-item" href="{{'entrenamientos/create'}}">Crear Entrenamiento</a></li>
+                        <li><a class="dropdown-item" href="{{'entrenamientos'}}">Visualizar los Entrenamientos</a></li>
                     </ul>
                 </div>
 
@@ -102,7 +103,7 @@
                     <form  action='{{url("equipos/$equipo->id")}}' method="POST">
                     @csrf
                     
-                    <p><strong>Id:</strong> {{$equipo['id']}}<br><strong>Club:</strong> {{$equipo['club']}}<br><strong>Categoria:</strong> {{$equipo['categoria']}}<br><strong>Temporada:</strong> {{$equipo['temporada']}}<br><strong>Deporte:</strong> {{$equipo['deporte']}}</p>
+                    <p><strong>Id:</strong> {{$equipo['id']}}<br><strong>Club:</strong> {{$equipo['club']}}<br><strong>Categoria:</strong> {{$equipo['categoria']}}<br><strong>Temporada:</strong> {{$equipo['temporada']}}<br><strong>Deporte:</strong> {{$equipo['deporte']}} </p>
                     
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="submit" class="btn btn-danger" value="Eliminar">
