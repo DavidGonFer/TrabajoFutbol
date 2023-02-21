@@ -15,10 +15,10 @@ class Convocatoria extends Model
         'asistencia',
     ];
     public function jugadores(){
-        return $this->belongsTo(Jugadore::class);
+        return $this->hasOne(Jugadore::class,'cod_jugador','cod_jugador');
     }
 
     public function partidos(){
-        return $this->belongsTo(Partido::class);
+        return $this->hasOne(Partido::class,'cod_convocatoria','cod_jugador');
     }
 }

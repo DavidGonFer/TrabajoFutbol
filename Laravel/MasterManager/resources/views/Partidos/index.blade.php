@@ -95,7 +95,6 @@
 
     <section class="mx-auto">
 
-            
             <div id="datos">
                 <h4>Partidos/s:</h4>
                 <div class="grid-container">

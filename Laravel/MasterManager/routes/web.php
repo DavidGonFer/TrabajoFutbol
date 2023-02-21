@@ -1,5 +1,6 @@
 <?php
-
+use App\Http\Controllers\ConvocatoriaController;
+use App\Http\Controllers\AsistenciaController;
 use App\Http\Controllers\EntrenamientoController;
 use App\Http\Controllers\EquiposController;
 use App\Http\Controllers\JugadoresController;
@@ -24,3 +25,5 @@ Route::resource('equipos',EquiposController::class);
 Route::resource('jugadores',JugadoresController::class);
 Route::resource('entrenamientos',EntrenamientoController::class);
 Route::resource('partidos',PartidoController::class);
+Route::resource('asistencias',AsistenciaController::class);
+Route::resource('convocatorias',ConvocatoriaController::class);

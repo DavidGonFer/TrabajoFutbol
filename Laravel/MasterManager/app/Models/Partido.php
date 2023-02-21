@@ -15,15 +15,15 @@ class Partido extends Model
         'fecha_hora',
     ];
     
-    public function equipo(){
-        return $this->belongsTo(Equipo::class);
+    public function equipos(){
+        return $this->hasOne(Equipo::class,'id','id');
     }
 
-    public function adversario(){
-        return $this->belongsTo(Adversario::class);
+    public function adversarios(){
+        return $this->hasOne(Adversario::class,'id','id');
     }
 
     public function convocatorias(){
-        return $this->hasMany(Convocatoria::class,'cod_convocatoria');
+        return $this->hasMany(Convocatoria::class);
     }
 }

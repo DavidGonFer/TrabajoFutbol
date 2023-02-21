@@ -21,14 +21,14 @@ class Jugadore extends Model
         return $this->belongsTo(Equipo::class);
     }
     public function asistencia(){
-        return $this->hasMany(Asistencia::class, 'cod_jugador');
+        return $this->hasMany(Asistencia::class);
     }
 
     public function convocatoria(){
-        return $this->hasMany(Convocatoria::class, 'cod_convocatoria');
+        return $this->hasMany(Convocatoria::class);
     }
     public function entrenamientos(){
-        return $this->belongsTo(Entrenamiento::class,'cod_entrenamiento');
+        return $this->belongsTo(Entrenamiento::class,'id','id');
     }
 
 }

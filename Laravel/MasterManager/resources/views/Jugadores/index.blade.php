@@ -22,9 +22,9 @@
 </head>
 
 <body class=" bg-transparent ">
-    <nav class="navbar  navbar-expand* navbar-dark d-flex">
+    <nav class="navbar bg-success navbar-expand* navbar-light d-flex">
 
-        <img src="{{asset('../resources/img/logoHeader.png')}}" alt="Logo de futbol" class="pl-2 float-right">
+        <img src="../img/logoHeader.png" alt="Logo de futbol" class="pl-2 float-right">
         <a class="nav-item nav-link" type="button" href="../index.html">
             <h1 id="masterM">MasterManager</h1>
         </a>
@@ -101,7 +101,7 @@
                 <div class="grid-itemjug">
                     <form action='{{url("jugadores/$jugador->id")}}' method="POST">
                     @csrf
-                    <p><strong>Nombre:</strong> {{$jugador['nombre']}} <strong>Apellido:</strong> {{$jugador['apellidos']}} </p>
+                    <p><strong>Nombre:</strong> {{$jugador['nombre']}} <strong>Apellido:</strong> {{$jugador['apellidos']}}</p>
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="submit" class="btn btn-danger float-right" value="Eliminar">
                     <a class="btn btn-warning float-right mx-1" href={{url("jugadores/$jugador->id/edit")}}>Editar</a>

@@ -15,7 +15,10 @@ class Entrenamiento extends Model
         'duracion',
     ];
     public function jugadores(){
-        return $this->belongsTo(Entrenamiento::class,'cod_jugador');
+        return $this->belongsTo(Jugadore::class,'id','id');
+    }
+    public function asistencias(){
+        return $this->hasOne(Asistencia::class,'cod_entrenamiento','cod_entrenamiento');
     }
 
 }

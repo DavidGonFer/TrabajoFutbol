@@ -33,56 +33,7 @@
             data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="btn-group dropright">
-                <div class="dropdown">
-                    <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown"
-                        aria-expanded="false">
-                        Equipo
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="{{'equipos/create'}}">Crear Equipo</a></li>
-                        <li><a class="dropdown-item" href="{{'equipos'}}">Visualizar Equipos</a></li>
-                    </ul>
-                </div>
-                <div class="dropdown">
-                    <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown"
-                        aria-expanded="false">
-                        Jugadores
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                        <li><a class="dropdown-item" href="{{'jugadores/create'}}">Crear Jugador</a></li>
-                        <li><a class="dropdown-item" href="{{'jugadores'}}">Visualizar los Jugadores</a></li>
-                    </ul>
-                </div>
-                <div class="dropdown">
-                    <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton3" data-toggle="dropdown"
-                        aria-expanded="false">
-                        Entrenamientos
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
-                        <li><a class="dropdown-item" href="{{'entrenamientos/create'}}">Crear Entrenamiento</a></li>
-                        <li><a class="dropdown-item" href="{{'entrenamientos'}}">Visualizar los Entrenamientos</a></li>
-                    </ul>
-                </div>
-
-
-                <a class="nav-item nav-link" href="#">Asistencias</a>
-
-
-                <div class="dropdown">
-                    <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton5" data-toggle="dropdown"
-                        aria-expanded="false">
-                        Partido
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton5">
-                        <li><a class="dropdown-item" href="#">Crear Partido</a></li>
-                        <li><a class="dropdown-item" href="#">Visualizar los Partidos</a></li>
-                    </ul>
-                </div>
-
-            </div>
+        </button>  
 
         </div><div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="btn-group dropright">
@@ -141,28 +92,31 @@
 
 
     <section class="mx-auto">
-        <div><!--Div obligatorio-->
 
-            <div id="crearEntren">
-                <h4>Crear Entrenamiento:</h4>
-                <form action='{{url("entrenamientos/$entrenamientos->id")}}' method="POST">
-                    @csrf
-                    @if($entrenamientos->id)
-                    <input type="hidden" name="_method" value="PUT">
-                    @endif 
-                    <label for="idEntre">id: </label><br>
-                    <label for="codEntre" >Codigo de Entrenamiento: </label><br>
-                    <input type="text" id="codEntre" class="form-control" name="cod_entrenamiento" value="{{$entrenamientos->cod_entrenamiento}}"><br>
-                    <label for="codEntre" >Codigo del Jugador: </label><br>
-                    <input type="text" id="codJug" class="form-control" name="cod_jugador" value="{{$entrenamientos->cod_entrenamiento}}"><br>
-                    <label for="Asistencia">Asistencia: </label><br>
-                    <input type="text" id="asistencia" class="form-control" name="asistencia" value="{{$entrenamientos->duracion}}"><br>
-            </div>
             
-
-
+        <div id="datos" >
+            <h4>Asistencia/s:</h4><br>
+            <div class="grid-container">
+            
+            @foreach($asistencias as $asistencia)
+            <div class="grid-item">
+                <form  action='{{url("asistencias/$asistencia->id")}}' method="POST">
+                @csrf
+                <p><strong>Nombre:</strong> {{$asistencia->jugadores->nombre}}<br><strong>Asistencia:</strong> {{$asistencia['asistencia']}}<br><strong>Duracion:</strong> {{$asistencia->entrenamientos->duracion}} </p>
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="submit" class="btn btn-danger" value="Eliminar">
+                
+                </form>
+            </div>
+            @endforeach  
+            
+            </div>
+            <br>
         </div>
-    </section>
+        
+
+
+</section>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

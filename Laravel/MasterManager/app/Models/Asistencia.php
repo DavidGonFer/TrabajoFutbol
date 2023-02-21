@@ -14,10 +14,10 @@ class Asistencia extends Model
         'asistencia',
     ];
     public function jugadores(){
-        return $this->belongsTo(Jugadore::class);
+        return $this->hasOne(Jugadore::class,'cod_jugador','cod_jugador');
     } 
 
     public function entrenamientos(){
-        return $this->hasMany(Entrenamiento::class);
+        return $this->hasOne(Entrenamiento::class,'cod_entrenamiento','cod_entrenamiento');
     }
 }
