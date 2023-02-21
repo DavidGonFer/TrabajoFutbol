@@ -18,6 +18,7 @@ class CreateAsistenciasTable extends Migration
             $table->integer('cod_entrenamiento');
             $table->integer('cod_jugador');
             $table->string('asistencia');
+            $table->string('asistencia_nojustificada');
             $table->timestamps();
         });
     }

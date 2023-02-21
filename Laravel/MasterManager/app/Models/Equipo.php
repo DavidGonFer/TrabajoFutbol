@@ -9,6 +9,7 @@ class Equipo extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'cod_equipo',
         'club',
         'categoria',
         'deporte',
@@ -18,6 +19,6 @@ class Equipo extends Model
         return $this->hasMany(Jugadore::class);
     }
     public function partidos(){
-        return $this->hasOne(Partido::class);
+        return $this->hasMany(Partido::class);
     }
 }

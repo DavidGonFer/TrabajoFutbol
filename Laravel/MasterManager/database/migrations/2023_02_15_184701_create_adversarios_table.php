@@ -15,6 +15,7 @@ class CreateAdversariosTable extends Migration
     {
         Schema::create('adversarios', function (Blueprint $table) {
             $table->id();
+            $table->integer('cod_adversario');
             $table->string('club');
             $table->string('categoria');
             $table->string('deporte');

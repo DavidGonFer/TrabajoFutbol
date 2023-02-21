@@ -102,8 +102,12 @@
                     @if($partidos->id)
                     <input type="hidden" name="_method" value="PUT">
                     @endif 
+
+                    <label for="duracion">Codigo de Equipo: </label><br>
+                    <input type="text" id="codConvo" class="form-control" name="cod_equipo" value="{{$partidos->cod_equipo}}" ><br>
                     
-                    <label for="id">Id: </label><br>
+                    <label for="duracion">Codigo de Adversario: </label><br>
+                    <input type="text" id="codConvo" class="form-control" name="cod_adversario" value="{{$partidos->cod_adversario}}" ><br>
 
                     <label for="duracion">Codigo de Convocatoria: </label><br>
                     <input type="text" id="codConvo" class="form-control" name="cod_convocatoria" value="{{$partidos->cod_convocatoria}}" ><br>

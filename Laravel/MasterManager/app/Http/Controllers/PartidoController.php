@@ -52,6 +52,8 @@ class PartidoController extends Controller
     {
         $partidos = new Partido();
         $partidos  -> cod_convocatoria = $request -> cod_convocatoria;
+        $partidos  -> cod_equipo = $request -> cod_equipo;
+        $partidos  -> cod_adversario = $request -> cod_adversario;
         $partidos  -> duracion= $request -> duracion;
         $partidos  -> fecha_hora = $request -> fecha_hora;
         $partidos  -> observaciones = $request -> observaciones;
@@ -94,6 +96,8 @@ class PartidoController extends Controller
     public function update(Request $request, $id)
     {
         $partidos = Partido::find($id);
+        $partidos  -> cod_convocatoria = $request -> cod_convocatoria;
+        $partidos  -> cod_equipo = $request -> cod_equipo;
         $partidos  -> cod_convocatoria = $request -> cod_convocatoria;
         $partidos  -> duracion= $request -> duracion;
         $partidos  -> fecha_hora= $request -> fecha_hora;

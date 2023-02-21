@@ -13,6 +13,7 @@ class Convocatoria extends Model
         'cod_entrenador',
         'cod_jugador',
         'asistencia',
+        'asistencia_nojustificada'
     ];
     public function jugadores(){
         return $this->hasOne(Jugadore::class,'cod_jugador','cod_jugador');

@@ -99,8 +99,8 @@
                 @if($equipo->id)
                 <input type="hidden" name="_method" value="PUT">
                 @endif
-                <label for="club">Id: </label><br>
-                <input type="text" id="club" class="form-control"  value="{{$equipo->id}}"><br>
+                <label for="club">Cod_Partido: </label><br>
+                <input type="text" id="club" class="form-control" name="cod_equipo" value="{{$equipo->cod_equipo}}"><br>
                 <label for="club">Club: </label><br>
                 <input type="text" id="club" class="form-control" name="club" value="{{$equipo->club}}"><br>
                 <label for="deporte">Deporte: </label><br>

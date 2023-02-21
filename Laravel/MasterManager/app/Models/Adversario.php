@@ -9,12 +9,13 @@ class Adversario extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'cod_adversario',
         'clubs',
         'categoria',
         'deporte',
         'temporada',
     ];
     public function adversarios(){
-        return $this->hasOne(Partido::class);
+        return $this->hasMany(Partido::class);
     }
 }

@@ -104,7 +104,7 @@
                     <form action='{{url("partidos/$partido->id")}}' method="POST">
                     @csrf
                     
-                    <p>Cod: {{$partido['cod_convocatoria']}}<br> Duracion: {{$partido['duracion']}}</p>
+                    <p>{{$partido->equipos->club}}<p>VS</p>{{$partido->adversarios->club}}</p>
                     <br>
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="submit" class="btn btn-danger" value="Eliminar">

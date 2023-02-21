@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-02-2023 a las 09:28:53
--- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 8.0.19
+-- Tiempo de generación: 21-02-2023 a las 23:51:22
+-- Versión del servidor: 10.4.17-MariaDB
+-- Versión de PHP: 8.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `adversarios` (
   `id` bigint(20) UNSIGNED NOT NULL,
+  `cod_adversario` int(11) NOT NULL,
   `club` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `categoria` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `deporte` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -36,6 +37,13 @@ CREATE TABLE `adversarios` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `adversarios`
+--
+
+INSERT INTO `adversarios` (`id`, `cod_adversario`, `club`, `categoria`, `deporte`, `temporada`, `created_at`, `updated_at`) VALUES
+(1, 1, 'Salamanca.FC', 'Alevin', 'Futbol', '2023', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -48,9 +56,17 @@ CREATE TABLE `asistencias` (
   `cod_entrenamiento` int(11) NOT NULL,
   `cod_jugador` int(11) NOT NULL,
   `asistencia` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `asistencia_nojustificada` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `asistencias`
+--
+
+INSERT INTO `asistencias` (`id`, `cod_entrenamiento`, `cod_jugador`, `asistencia`, `asistencia_nojustificada`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 'Si', 'No', '2023-02-21 21:37:08', '2023-02-21 21:37:08');
 
 -- --------------------------------------------------------
 
@@ -66,6 +82,13 @@ CREATE TABLE `convocatorias` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `convocatorias`
+--
+
+INSERT INTO `convocatorias` (`id`, `cod_partido`, `cod_jugador`, `convocado`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 'Si', '2023-02-21 21:38:57', '2023-02-21 21:38:57');
 
 -- --------------------------------------------------------
 
@@ -83,6 +106,13 @@ CREATE TABLE `entrenamientos` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Volcado de datos para la tabla `entrenamientos`
+--
+
+INSERT INTO `entrenamientos` (`id`, `cod_entrenamiento`, `observaciones`, `Fecha_Hora`, `duracion`, `created_at`, `updated_at`) VALUES
+(1, 1, 'Duro Rival', '10-2-2023 10:00', 90, '2023-02-21 21:35:22', '2023-02-21 21:35:22');
+
 -- --------------------------------------------------------
 
 --
@@ -91,6 +121,7 @@ CREATE TABLE `entrenamientos` (
 
 CREATE TABLE `equipos` (
   `id` bigint(20) UNSIGNED NOT NULL,
+  `cod_equipo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `club` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `categoria` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `deporte` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -103,8 +134,8 @@ CREATE TABLE `equipos` (
 -- Volcado de datos para la tabla `equipos`
 --
 
-INSERT INTO `equipos` (`id`, `club`, `categoria`, `deporte`, `temporada`, `created_at`, `updated_at`) VALUES
-(1, 'dadad', 'dadad', 'dadda', '2023', '2023-02-16 07:24:27', '2023-02-16 07:24:27');
+INSERT INTO `equipos` (`id`, `cod_equipo`, `club`, `categoria`, `deporte`, `temporada`, `created_at`, `updated_at`) VALUES
+(1, '1', 'Nogales', 'Alevin', 'Futbol', '2023', '2023-02-21 21:34:33', '2023-02-21 21:34:33');
 
 -- --------------------------------------------------------
 
@@ -146,7 +177,7 @@ CREATE TABLE `jugadores` (
 --
 
 INSERT INTO `jugadores` (`id`, `cod_convocatoria`, `cod_jugador`, `observaciones`, `telefono`, `apellidos`, `nombre`, `fecha_nacimiento`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, 'Central', 12313, 'Jiménez Portero', 'adrian', '2012-12-27', '2023-02-16 07:27:10', '2023-02-16 07:27:10');
+(1, 1, 1, 'Buen extremo', 333333, 'Jimenez Portero', 'Daniel', '20000-09-20', '2023-02-21 21:35:02', '2023-02-21 21:35:02');
 
 -- --------------------------------------------------------
 
@@ -168,13 +199,13 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '2014_10_12_000000_create_users_table', 1),
 (2, '2014_10_12_100000_create_password_resets_table', 1),
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
-(4, '2023_02_15_182127_create_equipos_table', 2),
-(5, '2023_02_15_182935_create_jugadores_table', 2),
-(6, '2023_02_15_183615_create_entrenamientos_table', 2),
-(7, '2023_02_15_183910_create_asistencias_table', 2),
-(8, '2023_02_15_184134_create_partidos_table', 2),
-(9, '2023_02_15_184701_create_adversarios_table', 2),
-(10, '2023_02_15_184845_create_convocatorias_table', 2);
+(4, '2023_02_15_182127_create_equipos_table', 1),
+(5, '2023_02_15_182935_create_jugadores_table', 1),
+(6, '2023_02_15_183615_create_entrenamientos_table', 1),
+(7, '2023_02_15_183910_create_asistencias_table', 1),
+(8, '2023_02_15_184134_create_partidos_table', 1),
+(9, '2023_02_15_184701_create_adversarios_table', 1),
+(10, '2023_02_15_184845_create_convocatorias_table', 1);
 
 -- --------------------------------------------------------
 
@@ -184,6 +215,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 
 CREATE TABLE `partidos` (
   `id` bigint(20) UNSIGNED NOT NULL,
+  `cod_equipo` int(11) NOT NULL,
+  `cod_adversario` int(11) NOT NULL,
   `cod_convocatoria` int(11) NOT NULL,
   `observaciones` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `duracion` int(11) NOT NULL,
@@ -191,6 +224,13 @@ CREATE TABLE `partidos` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `partidos`
+--
+
+INSERT INTO `partidos` (`id`, `cod_equipo`, `cod_adversario`, `cod_convocatoria`, `observaciones`, `duracion`, `fecha_hora`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 1, 'Rival peligroso', 90, '11-2-2023 10:00', '2023-02-21 21:38:30', '2023-02-21 21:38:30');
 
 -- --------------------------------------------------------
 
@@ -301,25 +341,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `adversarios`
 --
 ALTER TABLE `adversarios`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `asistencias`
 --
 ALTER TABLE `asistencias`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `convocatorias`
 --
 ALTER TABLE `convocatorias`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `entrenamientos`
 --
 ALTER TABLE `entrenamientos`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `equipos`
@@ -349,7 +389,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT de la tabla `partidos`
 --
 ALTER TABLE `partidos`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `users`

@@ -157,6 +157,8 @@
                     <input type="text" id="codJug" class="form-control" name="cod_jugador" value="{{$asistencias->cod_jugador}}"><br>
                     <label for="Asistencia">Asistencia: </label><br>
                     <input type="text" id="asistencia" class="form-control" name="asistencia" value="{{$asistencias->asistencia}}"><br>
+                    <label for="Asistencia">Asistencia_nojustificada: </label><br>
+                    <input type="text" id="asistencia" class="form-control" name="asistencia_nojustificada" value="{{$asistencias->asistencia_nojustificada}}"><br>
                     <button type="submit" class="btn btn-success mb-2" value="Guardar">Crear Nueva Asistencia</button>
             </div>
             

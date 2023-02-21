@@ -58,6 +58,7 @@ class AsistenciaController extends Controller
         $asistencias-> cod_entrenamiento = $request -> cod_entrenamiento;
         $asistencias -> cod_jugador = $request -> cod_jugador;
         $asistencias -> asistencia= $request -> asistencia;
+        $asistencias -> asistencia_nojustificada= $request -> asistencia_nojustificada;
         $asistencias -> save();
         return Redirect::to('asistencias');
     }

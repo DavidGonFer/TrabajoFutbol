@@ -48,6 +48,7 @@ class EquiposController extends Controller
     public function store(Request $request)
     {
         $equipo=new Equipo();
+        $equipo->cod_equipo=$request->cod_equipo;
         $equipo->club=$request->club;
         $equipo->categoria=$request->categoria;
         $equipo->temporada=$request->temporada;
@@ -55,18 +56,6 @@ class EquiposController extends Controller
         $equipo->save();
         return Redirect::to('equipos')->with('equipe','Se hac reado correctamente');
         
-    }
-
-    public function reglas(){
-        switch($this->method()){
-            case "POST":{
-                return ["club" => "required|unique:club"];
-            }
-            case "PUT":{
-                return ["club" => "required|unique:club"];
-            }
-        }
-        return [];
     }
 
     /**
@@ -104,6 +93,7 @@ class EquiposController extends Controller
     public function update(Request $request, $id)
     {
         $equipo=Equipo::find($id);
+        $equipo->cod_equipo=$request->cod_equipo;
         $equipo->club=$request->club;
         $equipo->categoria=$request->categoria;
         $equipo->temporada=$request->temporada;
