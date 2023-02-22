@@ -19,6 +19,8 @@ class CreatePartidosTable extends Migration
             $table->integer('cod_adversario');
             $table->integer('cod_convocatoria');
             $table->string('observaciones');
+            $table->string('logo');
+            $table->string('logo_adversario');
             $table->integer('duracion');
             $table->string('fecha_hora');
             $table->timestamps();

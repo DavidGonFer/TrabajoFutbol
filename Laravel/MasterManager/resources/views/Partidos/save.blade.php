@@ -97,7 +97,7 @@
     <section class="mx-auto" id="sectionCrear">
             <div id="formularioCrear">
                 <h4>Crear Partido:</h4>
-                <form action='{{url("partidos/$partidos->id")}}' method="POST">
+                <form action='{{url("partidos/$partidos->id")}}' method="POST" enctype="multipart/form-data">
                     @csrf
                     @if($partidos->id)
                     <input type="hidden" name="_method" value="PUT">
@@ -122,7 +122,13 @@
                     <input type="text" id="observaciones" class="form-control" name="observaciones" value="{{$partidos->observaciones}}"><br>
                     
                     <label for="formFile" class="form-label">Logo:</label>
-                    <input class="form-control pb-1" id="formFile" type="file"><br>
+                    <input class="form-control pb-1" id="formFile" type="file" name="archivo" required><br>
+                    <input class="btn btn-sucess"  type="submit" value="Enviar"><br>
+
+                    <label for="formFile" class="form-label">Logo Adversario:</label>
+                    <input class="form-control pb-1" id="formFile" type="file" name="archivo1" required><br>
+                    <input class="btn btn-sucess"  type="submit" value="Enviar"><br>
+
 
                     <button type="submit" class="btn btn-success mb-2" value="Guardar">Crear nuevo partido</button>
                 </form>

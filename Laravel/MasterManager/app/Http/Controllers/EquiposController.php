@@ -53,6 +53,11 @@ class EquiposController extends Controller
         $equipo->categoria=$request->categoria;
         $equipo->temporada=$request->temporada;
         $equipo->deporte=$request->deporte;
+        
+        $file=$request->file('archivo');
+        $nombre=$file->getClientOriginalName();
+        $file->move(public_path().'/imagenes/',$nombre);
+        $equipo->logo=$nombre;
         $equipo->save();
         return Redirect::to('equipos')->with('equipe','Se hac reado correctamente');
         

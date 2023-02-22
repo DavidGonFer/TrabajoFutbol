@@ -14,6 +14,7 @@ class Adversario extends Model
         'categoria',
         'deporte',
         'temporada',
+        
     ];
     public function adversarios(){
         return $this->belongsTo(Partido::class);

@@ -103,8 +103,11 @@
                     <form  action='{{url("equipos/$equipo->id")}}' method="POST">
                     @csrf
                     
-                    <p><strong>Id:</strong> {{$equipo['id']}}<br><strong>Club:</strong> {{$equipo['club']}}<br><strong>Categoria:</strong> {{$equipo['categoria']}}<br><strong>Temporada:</strong> {{$equipo['temporada']}}<br><strong>Deporte:</strong> {{$equipo['deporte']}} </p>
-                    
+                    <p><strong>Id:</strong> {{$equipo['id']}}<br><strong>Club:</strong> {{$equipo['club']}}<br><strong>Categoria:</strong> {{$equipo['categoria']}}<br><strong>Temporada:</strong> {{$equipo['temporada']}}<br><strong>Deporte:</strong> {{$equipo['deporte']}}</p>
+                    @if(isset($logo))
+                    <br><img src="{{url('imagenes/.$logo->.$logo.png')}}"> 
+                    @endif
+                    <img src="{{url('imagenes/'.$equipo->logo)}}">
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="submit" class="btn btn-danger" value="Eliminar">
                     <a href={{url("equipos/$equipo->id/edit")}} class="btn btn-warning">Editar</a>

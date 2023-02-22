@@ -57,6 +57,18 @@ class PartidoController extends Controller
         $partidos  -> duracion= $request -> duracion;
         $partidos  -> fecha_hora = $request -> fecha_hora;
         $partidos  -> observaciones = $request -> observaciones;
+        
+        $file=$request->file('archivo');
+        $nombre=$file->getClientOriginalName();
+        $file->move(public_path().'/imagenes/',$nombre);
+        $partidos->logo=$nombre;
+
+        $file=$request->file('archivo1');
+        $nombre1=$file->getClientOriginalName();
+        $file->move(public_path().'/imagenes/',$nombre1);
+        $partidos->logo_adversario=$nombre1;
+
+        $partidos->save();
         $partidos  -> save();
         return Redirect::to('partidos');
     }

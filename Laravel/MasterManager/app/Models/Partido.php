@@ -15,6 +15,8 @@ class Partido extends Model
         'observaciones',
         'duracion',
         'fecha_hora',
+        'logo',
+        'logoadversario'
     ];
     
     public function equipos(){

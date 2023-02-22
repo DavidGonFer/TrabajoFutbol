@@ -20,6 +20,7 @@ class CreateEquiposTable extends Migration
             $table->string('categoria');
             $table->string('deporte');
             $table->string('temporada');
+            $table->string('logo');
             $table->timestamps();
         });
     }

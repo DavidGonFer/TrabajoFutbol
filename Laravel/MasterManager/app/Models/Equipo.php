@@ -14,6 +14,7 @@ class Equipo extends Model
         'categoria',
         'deporte',
         'temporada',
+        'logo'
     ];
     public function jugadores(){
         return $this->hasMany(Jugadore::class);

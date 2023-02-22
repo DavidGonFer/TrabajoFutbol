@@ -94,7 +94,7 @@
     <section class="mx-auto" id="sectionCrear">
         <div id="formularioCrear"><!--Div obligatorio-->
             <h4>Crear Equipo:</h4>
-            <form action='{{url("equipos/$equipo->id")}}' method="POST">
+            <form action='{{url("equipos/$equipo->id")}}' method="POST" enctype="multipart/form-data">
                 @csrf
                 @if($equipo->id)
                 <input type="hidden" name="_method" value="PUT">
@@ -109,6 +109,9 @@
                 <input type="text" id="tempo" class="form-control" name="temporada" value="{{$equipo->temporada}}"><br>
                 <label for="name3">Categoria: </label><br>
                 <input type="text" id="tempo" class="form-control"  name="categoria" value="{{$equipo->categoria}}"><br>
+                <label for="formFile" class="form-label">Logo:</label>
+                <input class="form-control pb-1" id="formFile" type="file" name="archivo" required><br>
+                <input class="btn btn-sucess"  type="submit" value="Enviar"><br>
                 <button type="submit" class="btn btn-success mb-2" value="Guardar">Crear nuevo equipo</button>
         </div>
     </section>

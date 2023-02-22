@@ -104,8 +104,16 @@
                     <form action='{{url("partidos/$partido->id")}}' method="POST">
                     @csrf
                     
-                    <p>{{$partido->equipos->club}}<p>VS</p>{{$partido->adversarios->club}}</p>
+                    <p>{{$partido->equipos->club}} <img src="{{url('imagenes/'.$partido->logo)}}"><p>VS</p>{{$partido->adversarios->club}} <img src="{{url('imagenes/'.$partido->logo_adversario)}}"></p>
                     <br>
+                    @if(isset($logo))
+                    <br><img src="{{url('imagenes/.$logo->.$logo.png')}}"> 
+                    @endif
+
+                    @if(isset($logo2))
+                    <br><img src="{{url('imagenes/.$logo2->.$logo2.png')}}"> 
+                    @endif
+                    
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="submit" class="btn btn-danger" value="Eliminar">
                     <a href={{url("partidos/$partido->id/edit")}}>Editar</a>
