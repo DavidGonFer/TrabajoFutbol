@@ -84,56 +84,6 @@
 
             </div>
 
-        </div><div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="btn-group dropright">
-                <div class="dropdown">
-                    <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown"
-                        aria-expanded="false">
-                        Equipo
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="{{'equipos/create'}}">Crear Equipo</a></li>
-                        <li><a class="dropdown-item" href="{{'equipos'}}">Visualizar Equipos</a></li>
-                    </ul>
-                </div>
-                <div class="dropdown">
-                    <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown"
-                        aria-expanded="false">
-                        Jugadores
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                        <li><a class="dropdown-item" href="{{'jugadores/create'}}">Crear Jugador</a></li>
-                        <li><a class="dropdown-item" href="{{'jugadores'}}">Visualizar los Jugadores</a></li>
-                    </ul>
-                </div>
-                <div class="dropdown">
-                    <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton3" data-toggle="dropdown"
-                        aria-expanded="false">
-                        Entrenamientos
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
-                        <li><a class="dropdown-item" href="{{'entrenamientos/create'}}">Crear Entrenamiento</a></li>
-                        <li><a class="dropdown-item" href="{{'entrenamientos'}}">Visualizar los Entrenamientos</a></li>
-                    </ul>
-                </div>
-
-
-                <a class="nav-item nav-link" href="#">Asistencias</a>
-
-
-                <div class="dropdown">
-                    <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton5" data-toggle="dropdown"
-                        aria-expanded="false">
-                        Partido
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton5">
-                        <li><a class="dropdown-item" href="#">Crear Partido</a></li>
-                        <li><a class="dropdown-item" href="#">Visualizar los Partidos</a></li>
-                    </ul>
-                </div>
-
-            </div>
-
         </div>
     </nav>
 
@@ -150,13 +100,14 @@
                     @if($convocatorias->id)
                     <input type="hidden" name="_method" value="PUT">
                     @endif 
-                    <label for="idEntre">id: </label><br>
                     <label for="codEntre" >Codigo de Partido: </label><br>
                     <input type="text" id="codEntre" class="form-control" name="cod_partido" value="{{$convocatorias->cod_partido}}"><br>
                     <label for="codEntre" >Codigo del Jugador: </label><br>
                     <input type="text" id="codJug" class="form-control" name="cod_jugador" value="{{$convocatorias->cod_jugador}}"><br>
                     <label for="Asistencia">Asistencia: </label><br>
                     <input type="text" id="asistencia" class="form-control" name="convocado" value="{{$convocatorias->convocado}}"><br>
+                    <label for="Asistencia">Ha sido justificado: </label><br>
+                    <input type="text" id="asistencia" class="form-control" name="convocado_nojustificado" value="{{$convocatorias->convocado_nojustificado}}"><br>
                     <button type="submit" class="btn btn-success mb-2" value="Guardar">Crear Nueva Convocatoria</button>
             </div>
             
