@@ -19,6 +19,6 @@ class Equipo extends Model
         return $this->hasMany(Jugadore::class);
     }
     public function partidos(){
-        return $this->hasMany(Partido::class);
+        return $this->belongsTo(Partido::class);
     }
 }

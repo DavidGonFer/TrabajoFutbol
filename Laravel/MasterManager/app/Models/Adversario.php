@@ -16,6 +16,6 @@ class Adversario extends Model
         'temporada',
     ];
     public function adversarios(){
-        return $this->hasMany(Partido::class);
+        return $this->belongsTo(Partido::class);
     }
 }

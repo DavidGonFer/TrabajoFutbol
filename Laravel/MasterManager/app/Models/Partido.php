@@ -18,14 +18,14 @@ class Partido extends Model
     ];
     
     public function equipos(){
-        return $this->hasOne(Equipo::class,'cod_equipo','cod_equipo');
+        return $this->belongsTo(Equipo::class,'cod_equipo','cod_equipo');
     }
 
     public function adversarios(){
-        return $this->hasOne(Adversario::class,'cod_adversario','cod_adversario');
+        return $this->belongsTo(Adversario::class,'cod_adversario','cod_adversario');
     }
 
     public function convocatorias(){
-        return $this->hasMany(Convocatoria::class);
+        return $this->belongsTo(Convocatoria::class);
     }
 }

@@ -18,7 +18,7 @@ class Entrenamiento extends Model
         return $this->belongsTo(Jugadore::class,'id','id');
     }
     public function asistencias(){
-        return $this->hasOne(Asistencia::class,'cod_entrenamiento','cod_entrenamiento');
+        return $this->belongsTo(Asistencia::class,'cod_entrenamiento','cod_entrenamiento');
     }
 
 }

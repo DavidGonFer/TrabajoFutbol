@@ -102,7 +102,7 @@
                     <form  action='{{url("convocatorias/$convocatoria->id")}}' method="POST">
                     @csrf
                     
-                    <p><br><strong>Nombre:</strong> {{$convocatoria->jugadores->nombre}} <strong>Apellido:</strong> {{$convocatoria->jugadores->apellidos}} <br><strong>Convocado:</strong> {{$convocatoria['convocado']}}<br><strong>F/H:</strong> {{$convocatoria->partidos->fecha_hora}}</p>
+                    <p><br><strong>Nombre:</strong> {{$convocatoria->jugadores->nombre}} <strong>Apellido:</strong> {{$convocatoria->jugadores->apellidos}} <br><strong>Convocado:</strong> {{$convocatoria['convocado']}}<br></p>
                     
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="submit" class="btn btn-danger" value="Eliminar">

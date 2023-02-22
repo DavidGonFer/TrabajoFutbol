@@ -16,10 +16,10 @@ class Convocatoria extends Model
         'asistencia_nojustificada'
     ];
     public function jugadores(){
-        return $this->hasOne(Jugadore::class,'cod_jugador','cod_jugador');
+        return $this->belongsTo(Jugadore::class,'cod_jugador','cod_jugador');
     }
 
     public function partidos(){
-        return $this->hasOne(Partido::class,'cod_convocatoria','cod_jugador');
+        return $this->belongsTo(Partido::class,'cod_convocatoria','cod_jugador');
     }
 }

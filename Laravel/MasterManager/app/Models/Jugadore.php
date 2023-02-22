@@ -21,11 +21,11 @@ class Jugadore extends Model
         return $this->belongsTo(Equipo::class);
     }
     public function asistencia(){
-        return $this->hasMany(Asistencia::class);
+        return $this->belongsTo(Asistencia::class,'cod_jugador','cod_jugador');
     }
 
     public function convocatoria(){
-        return $this->hasMany(Convocatoria::class);
+        return $this->belongsTo(Convocatoria::class);
     }
     public function entrenamientos(){
         return $this->belongsTo(Entrenamiento::class,'id','id');

@@ -23,7 +23,7 @@ class PartidoController extends Controller
         ->with('partidos')
         ->get()
         ->toArray();
-        $partidos= Partido::where('club','adversarios')->get()
+        $partidos= Partido::where('fecha_hora','adversarios')->get()
         ->with('partidos')
         ->get()
         ->toArray();

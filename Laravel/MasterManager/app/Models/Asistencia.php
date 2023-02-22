@@ -15,10 +15,10 @@ class Asistencia extends Model
         'asistencia_nojustificada'
     ];
     public function jugadores(){
-        return $this->hasOne(Jugadore::class,'cod_jugador','cod_jugador');
+        return $this->belongsTo(Jugadore::class,'cod_jugador','cod_jugador');
     } 
 
     public function entrenamientos(){
-        return $this->hasOne(Entrenamiento::class,'cod_entrenamiento','cod_entrenamiento');
+        return $this->belongsTo(Entrenamiento::class,'cod_entrenamiento','cod_entrenamiento');
     }
 }
