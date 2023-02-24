@@ -47,6 +47,14 @@ class EquiposController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'cod_equipo' => 'required|max:3|integer',
+            'club' => 'required|max:10|string',
+            'categoria' => 'required|max:10|string',
+            'temporada' => 'required|max:10|string',
+            'deporte' => 'required|max:10|string',
+    ]);
+
         $equipo=new Equipo();
         $equipo->cod_equipo=$request->cod_equipo;
         $equipo->club=$request->club;
@@ -59,7 +67,7 @@ class EquiposController extends Controller
         $file->move(public_path().'/imagenes/',$nombre);
         $equipo->logo=$nombre;
         $equipo->save();
-        return Redirect::to('equipos')->with('equipe','Se hac reado correctamente');
+        return Redirect::to('equipos');
         
     }
 
@@ -104,7 +112,7 @@ class EquiposController extends Controller
         $equipo->temporada=$request->temporada;
         $equipo->deporte=$request->deporte;
         $equipo->save();
-        return Redirect::to('equipos')->with('equipe','Se hac reado correctamente');
+        return Redirect::to('equipos');
         
     }
 
@@ -118,7 +126,7 @@ class EquiposController extends Controller
     {
         $equipo= Equipo::find($id);
         $equipo->delete();
-        return Redirect::to('equipos')->with('equipe','Se hac reado correctamente');
+        return Redirect::to('equipos');
 
     }
 }
