@@ -25,7 +25,7 @@
     <nav class="navbar  navbar-expand* navbar-dark d-flex">
 
         <img src="{{asset('../resources/img/logoHeader.png')}}" alt="Logo de futbol" class="pl-2 float-right">
-        <a class="nav-item nav-link" type="button" href="../index.html">
+        <a class="nav-item nav-link" type="button" href="{{'../'}}">
             <h1 id="masterM">MasterManager</h1>
         </a>
 
@@ -91,11 +91,6 @@
                     </ul>
                 </div>
 
-            </div>
-
-        </div>
-    </nav>
-
                 <div class="dropdown">
                     <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton5" data-toggle="dropdown"
                         aria-expanded="false">
@@ -111,6 +106,8 @@
 
         </div>
     </nav>
+
+
 
 
 

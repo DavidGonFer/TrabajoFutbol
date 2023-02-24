@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="htmljug">
 
 <head>
     <meta charset="UTF-8">
@@ -17,15 +17,15 @@
     <link rel="stylesheet" href="{{asset('../resources/css/css.css')}}">
 
     
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('../resources/img//logoHead.ico')}}" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('../resources/img/logoHead.ico')}}" />
     <title>MasterManager</title>
 </head>
 
 <body class=" bg-transparent ">
-    <nav class="navbar bg-success navbar-expand* navbar-light d-flex">
+    <nav class="navjugadores navbar  navbar-expand* navbar-dark d-flex " id="navjugadores">
 
-        <img src="../img/logoHeader.png" alt="Logo de futbol" class="pl-2 float-right">
-        <a class="nav-item nav-link" type="button" href="../index.html">
+        <img src="{{asset('../resources/img/logoHeader.png')}}" alt="Logo de futbol" class="pl-2 float-right">
+        <a class="nav-item nav-link" type="button" href="{{'../'}}">
             <h1 id="masterM">MasterManager</h1>
         </a>
 
@@ -91,10 +91,16 @@
                     </ul>
                 </div>
 
-            </div>
-
-        </div>
-    </nav>
+                <div class="dropdown">
+                    <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton5" data-toggle="dropdown"
+                        aria-expanded="false">
+                        Convocatorias
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton5">
+                        <li><a class="dropdown-item" href="{{'convocatorias/create'}}">Crear Convocatoria</a></li>
+                        <li><a class="dropdown-item" href="{{'convocatorias'}}">Visualizar las Convocatorias</a></li>
+                    </ul>
+                </div>
 
                 <div class="dropdown">
                     <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton5" data-toggle="dropdown"
@@ -116,17 +122,22 @@
 
 
 
-    <section class="mx-auto">
+
+    <section class="sectionjug mx-auto">
 
             
-            <div id="datos">
+            <div id="datos" class="datosjug">
                 <h4>Jugadores/s:</h4>
                 <div class="grid-containerjug">
                 @foreach($jugadores as $jugador)
                 <div class="grid-itemjug">
                     <form action='{{url("jugadores/$jugador->id")}}' method="POST">
+                        <img src="{{url('imagenes/'.$jugador->logo)}}" id="imgequipo">
                     @csrf
                     <p><strong>Nombre:</strong> {{$jugador['nombre']}} <strong>Apellido:</strong> {{$jugador['apellidos']}}</p>
+                    @if(isset($logo))
+                    <br><img src="{{url('imagenes/.$logo->.$logo.png')}}"> 
+                    @endif
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="submit" class="btn btn-danger float-right" value="Eliminar">
                     <a class="btn btn-warning float-right mx-1" href={{url("jugadores/$jugador->id/edit")}}>Editar</a>

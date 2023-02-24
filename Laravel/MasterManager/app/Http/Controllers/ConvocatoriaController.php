@@ -52,6 +52,12 @@ class ConvocatoriaController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'cod_partido' => 'required|max:3|Integer',
+            'cod_jugador' => 'required|max:3|Integer',
+            'convocado' => 'required|max:2|String',
+
+    ]);
         $convocatorias = new Convocatoria();
         $convocatorias-> cod_partido = $request -> cod_partido;
         $convocatorias -> cod_jugador = $request -> cod_jugador;
