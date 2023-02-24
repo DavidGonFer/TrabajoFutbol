@@ -54,6 +54,12 @@ class AsistenciaController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'cod_entrenamiento' => 'required|Integer|max:3',
+            'cod_jugador' => 'required|Integer|max:3',
+            'asistencia' => 'required|String|max:2',
+            'asistencia_nojustificada' => 'required|String|max:2',
+         ]);
         $asistencias = new Asistencia();
         $asistencias-> cod_entrenamiento = $request -> cod_entrenamiento;
         $asistencias -> cod_jugador = $request -> cod_jugador;

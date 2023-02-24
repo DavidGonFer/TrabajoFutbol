@@ -16,6 +16,7 @@ class Jugadore extends Model
         'apellidos',
         'nombre',
         'fecha_nacimiento',
+        'logo',
     ];
     public function equipos(){
         return $this->belongsTo(Equipo::class);

@@ -107,6 +107,15 @@ class PartidoController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'cod_convocatoria' => 'required|max:3|Integer',
+            'cod_equipo' => 'required|max:3|Integer',
+            'cod_adversario' => 'required|max:3|Integer',
+            'duracion' => 'required|max:90|Integer',
+            'fecha_hora' => 'required|max:20|String',
+            'observaciones' => 'required|max:50|String',
+    ]);
+
         $partidos = Partido::find($id);
         $partidos  -> cod_convocatoria = $request -> cod_convocatoria;
         $partidos  -> cod_equipo = $request -> cod_equipo;

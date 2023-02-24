@@ -132,8 +132,12 @@
                 @foreach($jugadores as $jugador)
                 <div class="grid-itemjug">
                     <form action='{{url("jugadores/$jugador->id")}}' method="POST">
+                        <img src="{{url('imagenes/'.$jugador->logo)}}" id="imgequipo">
                     @csrf
                     <p><strong>Nombre:</strong> {{$jugador['nombre']}} <strong>Apellido:</strong> {{$jugador['apellidos']}}</p>
+                    @if(isset($logo))
+                    <br><img src="{{url('imagenes/.$logo->.$logo.png')}}"> 
+                    @endif
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="submit" class="btn btn-danger float-right" value="Eliminar">
                     <a class="btn btn-warning float-right mx-1" href={{url("jugadores/$jugador->id/edit")}}>Editar</a>

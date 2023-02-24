@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" id="htmlconvocatorias">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -22,7 +22,7 @@
 </head>
 
 <body class=" bg-transparent ">
-    <nav class="navbar  navbar-expand* navbar-dark d-flex" id="navconvo">
+    <nav class="navbar  navbar-expand* navbar-dark d-flex">
 
         <img src="{{asset('../resources/img/logoHeader.png')}}" alt="Logo de futbol" class="pl-2 float-right">
         <a class="nav-item nav-link" type="button" href="{{'../'}}">
@@ -111,10 +111,10 @@
 
 
    
-    <section class="sectionconvo mx-auto">
+    <section class="mx-auto">
 
             
-            <div id="datos" class="datosconvo" >
+            <div id="datos" >
                 <h4>Convocatoria/s:</h4><br>
                 <div class="grid-container">
                 
