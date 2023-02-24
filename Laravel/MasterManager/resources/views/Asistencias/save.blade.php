@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="htmlasistencias">
 
 <head>
     <meta charset="UTF-8">
@@ -21,10 +21,10 @@
 </head>
 
 <body class=" bg-transparent ">
-    <nav class="navbar  navbar-expand* navbar-dark d-flex">
+    <nav class="navbar  navbar-expand* navbar-dark d-flex" id="navasis">
 
         <img src="{{asset('../resources/img/logoHeader.png')}}" alt="Logo de futbol" class="pl-2 float-right">
-        <a class="nav-item nav-link" type="button" href="../index.html">
+        <a class="nav-item nav-link" type="button" href="{{'../'}}">
             <h1 id="masterM">MasterManager</h1>
         </a>
 
@@ -41,8 +41,8 @@
                         Equipo
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="{{'equipos/create'}}">Crear Equipo</a></li>
-                        <li><a class="dropdown-item" href="{{'equipos'}}">Visualizar Equipos</a></li>
+                        <li><a class="dropdown-item" href="{{'../equipos/create'}}">Crear Equipo</a></li>
+                        <li><a class="dropdown-item" href="{{'../equipos'}}">Visualizar Equipos</a></li>
                     </ul>
                 </div>
                 <div class="dropdown">
@@ -51,8 +51,8 @@
                         Jugadores
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                        <li><a class="dropdown-item" href="{{'jugadores/create'}}">Crear Jugador</a></li>
-                        <li><a class="dropdown-item" href="{{'jugadores'}}">Visualizar los Jugadores</a></li>
+                        <li><a class="dropdown-item" href="{{'../jugadores/create'}}">Crear Jugador</a></li>
+                        <li><a class="dropdown-item" href="{{'../jugadores'}}">Visualizar los Jugadores</a></li>
                     </ul>
                 </div>
                 <div class="dropdown">
@@ -61,8 +61,8 @@
                         Entrenamientos
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
-                        <li><a class="dropdown-item" href="{{'entrenamientos/create'}}">Crear Entrenamiento</a></li>
-                        <li><a class="dropdown-item" href="{{'entrenamientos'}}">Visualizar los Entrenamientos</a></li>
+                        <li><a class="dropdown-item" href="{{'../entrenamientos/create'}}">Crear Entrenamiento</a></li>
+                        <li><a class="dropdown-item" href="{{'../entrenamientos'}}">Visualizar los Entrenamientos</a></li>
                     </ul>
                 </div>
 
@@ -73,8 +73,8 @@
                         Asistencias
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
-                        <li><a class="dropdown-item" href="{{'asistencias/create'}}">Crear Asistencias</a></li>
-                        <li><a class="dropdown-item" href="{{'asistencias'}}">Visualizar los Entrenamientos</a></li>
+                        <li><a class="dropdown-item" href="{{'./create'}}">Crear Asistencias</a></li>
+                        <li><a class="dropdown-item" href="{{'./'}}">Visualizar los Entrenamientos</a></li>
                     </ul>
                 </div>
 
@@ -85,15 +85,10 @@
                         Partido
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton5">
-                        <li><a class="dropdown-item" href="{{'partidos/create'}}">Crear Partido</a></li>
-                        <li><a class="dropdown-item" href="{{'partidos'}}">Visualizar los Partidos</a></li>
+                        <li><a class="dropdown-item" href="{{'../partidos/create'}}">Crear Partido</a></li>
+                        <li><a class="dropdown-item" href="{{'../partidos'}}">Visualizar los Partidos</a></li>
                     </ul>
                 </div>
-
-            </div>
-
-        </div>
-    </nav>
 
                 <div class="dropdown">
                     <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton5" data-toggle="dropdown"
@@ -101,8 +96,8 @@
                         Convocatorias
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton5">
-                        <li><a class="dropdown-item" href="{{'convocatorias/create'}}">Crear Convocatoria</a></li>
-                        <li><a class="dropdown-item" href="{{'convocatorias'}}">Visualizar las Convocatorias</a></li>
+                        <li><a class="dropdown-item" href="{{'../convocatorias/create'}}">Crear Convocatoria</a></li>
+                        <li><a class="dropdown-item" href="{{'../convocatorias'}}">Visualizar las Convocatorias</a></li>
                     </ul>
                 </div>
 
@@ -114,10 +109,11 @@
 
 
 
-    <section class="mx-auto">
+
+    <section class="sectionasis mx-auto">
         <div><!--Div obligatorio-->
 
-            <div id="crearEntren">
+            <div id="crearEntren" class="datosasis">
                 <h4>Crear Asistencia:</h4>
                 <form action='{{url("asistencias/$asistencias->id")}}' method="POST">
                     @csrf
@@ -126,24 +122,12 @@
                     @endif 
                     <label for="codEntre" >Codigo de Entrenamiento: </label><br>
                     <input type="text" id="codEntre" class="form-control" name="cod_entrenamiento" value="{{$asistencias->cod_entrenamiento}}"><br>
-                    @error('cod_entrenamiento')
-                    <p class="error-message">{{ $message }}</p>
-                    @enderror
                     <label for="codEntre" >Codigo del Jugador: </label><br>
                     <input type="text" id="codJug" class="form-control" name="cod_jugador" value="{{$asistencias->cod_jugador}}"><br>
-                    @error('cod_jugador')
-                    <p class="error-message">{{ $message }}</p>
-                    @enderror
                     <label for="Asistencia">Asistencia: </label><br>
                     <input type="text" id="asistencia" class="form-control" name="asistencia" value="{{$asistencias->asistencia}}"><br>
-                    @error('asistencia')
-                    <p class="error-message">{{ $message }}</p>
-                    @enderror
                     <label for="Asistencia">Ha sido justificado: </label><br>
                     <input type="text" id="asistencia" class="form-control" name="asistencia_nojustificada" value="{{$asistencias->asistencia_nojustificada}}"><br>
-                    @error('asistencia_nojustificada')
-                    <p class="error-message">{{ $message }}</p>
-                    @enderror
                     <button type="submit" class="btn btn-success mb-2" value="Guardar">Crear Nueva Asistencia</button>
             </div>
             

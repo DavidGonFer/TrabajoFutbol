@@ -25,7 +25,7 @@
     <nav class="navbar  navbar-expand* navbar-dark d-flex">
 
         <img  src="{{asset('../resources/img/logoHeader.png')}}" alt="Logo de futbol" class="pl-2 float-right">
-        <a class="nav-item nav-link" type="button" href="../index.html">
+        <a class="nav-item nav-link" type="button" href="{{'../'}}">
             <h1 id="masterM">MasterManager</h1>
         </a>
 
@@ -42,8 +42,8 @@
                         Equipo
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="{{'equipos/create'}}">Crear Equipo</a></li>
-                        <li><a class="dropdown-item" href="{{'equipos'}}">Visualizar Equipos</a></li>
+                        <li><a class="dropdown-item" href="{{'./create'}}">Crear Equipo</a></li>
+                        <li><a class="dropdown-item" href="{{'./'}}">Visualizar Equipos</a></li>
                     </ul>
                 </div>
                 <div class="dropdown">
@@ -52,8 +52,8 @@
                         Jugadores
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                        <li><a class="dropdown-item" href="{{'jugadores/create'}}">Crear Jugador</a></li>
-                        <li><a class="dropdown-item" href="{{'jugadores'}}">Visualizar los Jugadores</a></li>
+                        <li><a class="dropdown-item" href="{{'../jugadores/create'}}">Crear Jugador</a></li>
+                        <li><a class="dropdown-item" href="{{'../jugadores'}}">Visualizar los Jugadores</a></li>
                     </ul>
                 </div>
                 <div class="dropdown">
@@ -62,8 +62,8 @@
                         Entrenamientos
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
-                        <li><a class="dropdown-item" href="{{'entrenamientos/create'}}">Crear Entrenamiento</a></li>
-                        <li><a class="dropdown-item" href="{{'entrenamientos'}}">Visualizar los Entrenamientos</a></li>
+                        <li><a class="dropdown-item" href="{{'../entrenamientos/create'}}">Crear Entrenamiento</a></li>
+                        <li><a class="dropdown-item" href="{{'../entrenamientos'}}">Visualizar los Entrenamientos</a></li>
                     </ul>
                 </div>
 
@@ -74,8 +74,8 @@
                         Asistencias
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
-                        <li><a class="dropdown-item" href="{{'asistencias/create'}}">Crear Asistencias</a></li>
-                        <li><a class="dropdown-item" href="{{'asistencias'}}">Visualizar los Entrenamientos</a></li>
+                        <li><a class="dropdown-item" href="{{'../asistencias/create'}}">Crear Asistencias</a></li>
+                        <li><a class="dropdown-item" href="{{'../asistencias'}}">Visualizar los Entrenamientos</a></li>
                     </ul>
                 </div>
 
@@ -86,24 +86,19 @@
                         Partido
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton5">
-                        <li><a class="dropdown-item" href="{{'partidos/create'}}">Crear Partido</a></li>
-                        <li><a class="dropdown-item" href="{{'partidos'}}">Visualizar los Partidos</a></li>
+                        <li><a class="dropdown-item" href="{{'../partidos/create'}}">Crear Partido</a></li>
+                        <li><a class="dropdown-item" href="{{'../partidos'}}">Visualizar los Partidos</a></li>
                     </ul>
+                    
                 </div>
-
-            </div>
-
-        </div>
-    </nav>
-
                 <div class="dropdown">
                     <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton5" data-toggle="dropdown"
                         aria-expanded="false">
                         Convocatorias
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton5">
-                        <li><a class="dropdown-item" href="{{'convocatorias/create'}}">Crear Convocatoria</a></li>
-                        <li><a class="dropdown-item" href="{{'convocatorias'}}">Visualizar las Convocatorias</a></li>
+                        <li><a class="dropdown-item" href="{{'../convocatorias/create'}}">Crear Convocatoria</a></li>
+                        <li><a class="dropdown-item" href="{{'../convocatorias'}}">Visualizar las Convocatorias</a></li>
                     </ul>
                 </div>
 
@@ -112,21 +107,7 @@
         </div>
     </nav>
 
-                <div class="dropdown">
-                    <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton5" data-toggle="dropdown"
-                        aria-expanded="false">
-                        Convocatorias
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton5">
-                        <li><a class="dropdown-item" href="{{'convocatorias/create'}}">Crear Convocatoria</a></li>
-                        <li><a class="dropdown-item" href="{{'convocatorias'}}">Visualizar las Convocatorias</a></li>
-                    </ul>
-                </div>
-
-            </div>
-
-        </div>
-    </nav>
+            
 
 
 
@@ -142,37 +123,16 @@
                 @endif
                 <label for="club">Cod_Partido: </label><br>
                 <input type="text" id="club" class="form-control" name="cod_equipo" value="{{$equipo->cod_equipo}}"><br>
-                @error('cod_equipo')
-                <p class="error-message">{{ $message }}</p>
-                @enderror
-
                 <label for="club">Club: </label><br>
                 <input type="text" id="club" class="form-control" name="club" value="{{$equipo->club}}"><br>
-                @error('club')
-                <p class="error-message">{{ $message }}</p>
-                @enderror
-
                 <label for="deporte">Deporte: </label><br>
                 <input type="text" id="deporte" class="form-control" name="deporte" value="{{$equipo->deporte}}"><br>
-                @error('deporte')
-                <p class="error-message">{{ $message }}</p>
-                @enderror
-
                 <label for="name3">Temporada: </label><br>
                 <input type="text" id="tempo" class="form-control" name="temporada" value="{{$equipo->temporada}}"><br>
-                @error('temporada')
-                <p class="error-message">{{ $message }}</p>
-            @enderror
-
                 <label for="name3">Categoria: </label><br>
                 <input type="text" id="tempo" class="form-control"  name="categoria" value="{{$equipo->categoria}}"><br>
-                @error('categoria')
-                <p class="error-message">{{ $message }}</p>
-                 @enderror
-
                 <label for="formFile" class="form-label">Logo:</label>
                 <input class="form-control pb-1" id="formFile" type="file" name="archivo" required><br>
-                <input class="btn btn-sucess"  type="submit" value="Enviar"><br>
                 <button type="submit" class="btn btn-success mb-2" value="Guardar">Crear nuevo equipo</button>
         </div>
     </section>

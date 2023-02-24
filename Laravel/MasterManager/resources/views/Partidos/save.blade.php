@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="htmlpartido">
 
 <head>
     <meta charset="UTF-8">
@@ -25,7 +25,7 @@
     <nav class="navbar  navbar-expand* navbar-dark d-flex">
 
         <img src="{{asset('../resources/img/logoHeader.png')}}" alt="Logo de futbol" class="pl-2 float-right">
-        <a class="nav-item nav-link" type="button" href="../index.html">
+        <a class="nav-item nav-link" type="button" href="{{'../'}}">
             <h1 id="masterM">MasterManager</h1>
         </a>
 
@@ -91,11 +91,6 @@
                     </ul>
                 </div>
 
-            </div>
-
-        </div>
-    </nav>
-
                 <div class="dropdown">
                     <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton5" data-toggle="dropdown"
                         aria-expanded="false">
@@ -112,6 +107,8 @@
         </div>
     </nav>
 
+                
+
 
 
 
@@ -127,42 +124,25 @@
                     @if($partidos->id)
                     <input type="hidden" name="_method" value="PUT">
                     @endif 
-                    <label for="cod_equipo">Codigo de Equipo: </label><br>
+
+                    <label for="duracion">Codigo de Equipo: </label><br>
                     <input type="text" id="codConvo" class="form-control" name="cod_equipo" value="{{$partidos->cod_equipo}}" ><br>
-                    @error('cod_equipo')
-                    <p class="error-message">{{ $message }}</p>
-                    @enderror
-
-                    <label for="cod_adversario">Codigo de Adversario: </label><br>
+                    
+                    <label for="duracion">Codigo de Adversario: </label><br>
                     <input type="text" id="codConvo" class="form-control" name="cod_adversario" value="{{$partidos->cod_adversario}}" ><br>
-                    @error('cod_adversario')
-                    <p class="error-message">{{ $message }}</p>
-                    @enderror
 
-                    <label for="cod_convocatoria">Codigo de Convocatoria: </label><br>
+                    <label for="duracion">Codigo de Convocatoria: </label><br>
                     <input type="text" id="codConvo" class="form-control" name="cod_convocatoria" value="{{$partidos->cod_convocatoria}}" ><br>
-                    @error('cod_convocatoria')
-                    <p class="error-message">{{ $message }}</p>
-                    @enderror
-
+                    
                     <label for="duracion">Duracion: </label><br>
                     <input type="text" id="duracion" class="form-control" name="duracion" value="{{$partidos->duracion}}"><br>
-                    @error('duracion')
-                    <p class="error-message">{{ $message }}</p>
-                    @enderror
 
                     <label for="fecha">Fecha y hora: </label><br>
                     <input type="text" id="tempo" class="form-control" name="fecha_hora" value="{{$partidos->fecha_hora}}"><br>
-                    @error('fecha_hora')
-                    <p class="error-message">{{ $message }}</p>
-                    @enderror
-
+                    
                     <label for="observaciones">Observaciones: </label><br>
                     <input type="text" id="observaciones" class="form-control" name="observaciones" value="{{$partidos->observaciones}}"><br>
-                    @error('observaciones')
-                    <p class="error-message">{{ $message }}</p>
-                    @enderror
-
+                    
                     <label for="formFile" class="form-label">Logo:</label>
                     <input class="form-control pb-1" id="formFile" type="file" name="archivo" required><br>
                     <input class="btn btn-sucess"  type="submit" value="Enviar"><br>
