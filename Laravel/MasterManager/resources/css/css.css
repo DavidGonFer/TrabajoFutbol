@@ -63,7 +63,6 @@ section {
     overflow: hidden;
 }
 .datosjug{
-    
     background-color: #053543f8;
 }
 .sectionjug{
@@ -92,6 +91,7 @@ section {
 .sectionasis{
     background-color: #6e6e6e;
 }
+
 #navasis{
     background-color: #6e6e6e;
 }
@@ -115,7 +115,7 @@ a {
     
 }
 .navbar{
-    background-color: rgb(12, 54, 0);
+   background-color: rgb(12, 54, 0);
     color: aliceblue;
     font-size:medium;
     font-weight: 300;
@@ -165,7 +165,7 @@ a:hover {
     margin: 5px;
     display: block;
     min-width: 200px;
-    box-shadow: 5px 3px 5px rgba(0, 0, 0, 0.697);
+   box-shadow: 5px 3px 5px rgba(0, 0, 0, 0.697);
     font-size:large;
     font-weight: 300;
 }
