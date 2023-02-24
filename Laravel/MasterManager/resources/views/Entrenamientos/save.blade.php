@@ -21,8 +21,8 @@
     <title>MasterManager</title>
 </head>
 
-<body class=" bg-transparent ">
-    <nav class="navbar  navbar-expand* navbar-dark d-flex">
+<body class=" bg-transparent " >
+    <nav class="navbar  navbar-expand* navbar-dark d-flex" id="naventreno">
 
         <img src="{{asset('../resources/img/logoHeader.png')}}" alt="Logo de futbol" class="pl-2 float-right">
         <a class="nav-item nav-link" type="button" href="{{'../'}}">
@@ -108,10 +108,10 @@
 
 
 
-    <section class="mx-auto">
+    <section class="mx-auto sectionentreno">
         <div><!--Div obligatorio-->
 
-            <div id="crearEntren">
+            <div id="crearEntren" class="datosentreno">
                 <h4>Crear Entrenamiento:</h4>
                 <form action='{{url("entrenamientos/$entrenamientos->id")}}' method="POST">
                     @csrf
