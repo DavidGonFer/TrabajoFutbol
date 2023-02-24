@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" id="htmlasistencias">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -21,7 +21,7 @@
 </head>
 
 <body class=" bg-transparent ">
-    <nav class="navbar  navbar-expand* navbar-dark d-flex" id="navasis">
+    <nav class="navbar  navbar-expand* navbar-dark d-flex">
 
         <img src="{{asset('../resources/img/logoHeader.png')}}" alt="Logo de futbol" class="pl-2 float-right">
         <a class="nav-item nav-link" type="button" href="{{'../'}}">
@@ -110,10 +110,10 @@
 
 
 
-    <section class="sectionasis mx-auto">
+    <section class="mx-auto">
         <div><!--Div obligatorio-->
 
-            <div id="crearEntren" class="datosasis">
+            <div id="crearEntren">
                 <h4>Crear Asistencia:</h4>
                 <form action='{{url("asistencias/$asistencias->id")}}' method="POST">
                     @csrf

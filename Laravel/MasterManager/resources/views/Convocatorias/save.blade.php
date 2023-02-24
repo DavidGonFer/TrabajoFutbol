@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" id="htmlconvocatorias">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -22,7 +22,7 @@
 </head>
 
 <body class=" bg-transparent ">
-    <nav class="navbar  navbar-expand* navbar-dark d-flex" id="navconvo">
+    <nav class="navbar  navbar-expand* navbar-dark d-flex">
 
         <img src="{{asset('../resources/img/logoHeader.png')}}" alt="Logo de futbol" class="pl-2 float-right">
         <a class="nav-item nav-link" type="button" href="{{'../'}}">
@@ -111,10 +111,10 @@
 
 
 
-   <section class="sectionconvo mx-auto">
+    <section class="mx-auto">
         <div><!--Div obligatorio-->
 
-            <div id="crearEntren" class="datosconvo">
+            <div id="crearEntren">
                 <h4>Crear Convocatoria:</h4>
                 <form action='{{url("convocatorias/$convocatorias->id")}}' method="POST">
                     @csrf
