@@ -121,14 +121,29 @@
                     @if($convocatorias->id)
                     <input type="hidden" name="_method" value="PUT">
                     @endif 
-                    <label for="codEntre" >Codigo de Partido: </label><br>
+                    <label for="cod_partido" >Codigo de Partido: </label><br>
                     <input type="text" id="codEntre" class="form-control" name="cod_partido" value="{{$convocatorias->cod_partido}}"><br>
-                    <label for="codEntre" >Codigo del Jugador: </label><br>
+                    @error('cod_partido')
+                    <p class="error-message">{{ $message }}</p>
+                    @enderror
+
+                    <label for="cod_jugador" >Codigo del Jugador: </label><br>
                     <input type="text" id="codJug" class="form-control" name="cod_jugador" value="{{$convocatorias->cod_jugador}}"><br>
+                    @error('cod_jugador')
+                    <p class="error-message">{{ $message }}</p>
+                    @enderror
+
                     <label for="Asistencia">Asistencia: </label><br>
                     <input type="text" id="asistencia" class="form-control" name="convocado" value="{{$convocatorias->convocado}}"><br>
+                    @error('convocado')
+                    <p class="error-message">{{ $message }}</p>
+                    @enderror
+
                     <label for="Asistencia">Ha sido justificado: </label><br>
                     <input type="text" id="asistencia" class="form-control" name="convocado_nojustificado" value="{{$convocatorias->convocado_nojustificado}}"><br>
+                    @error('convocado_justificado')
+                    <p class="error-message">{{ $message }}</p>
+                    @enderror
                     <button type="submit" class="btn btn-success mb-2" value="Guardar">Crear Nueva Convocatoria</button>
             </div>
             

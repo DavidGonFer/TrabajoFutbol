@@ -123,14 +123,34 @@
                 @endif
                 <label for="club">Cod_Partido: </label><br>
                 <input type="text" id="club" class="form-control" name="cod_equipo" value="{{$equipo->cod_equipo}}"><br>
+                @error('cod_equipo')
+                <p class="error-message">{{ $message }}</p>
+                @enderror
+
                 <label for="club">Club: </label><br>
                 <input type="text" id="club" class="form-control" name="club" value="{{$equipo->club}}"><br>
+                @error('club')
+                <p class="error-message">{{ $message }}</p>
+                @enderror
+
                 <label for="deporte">Deporte: </label><br>
                 <input type="text" id="deporte" class="form-control" name="deporte" value="{{$equipo->deporte}}"><br>
+                @error('deporte')
+                <p class="error-message">{{ $message }}</p>
+                @enderror
+
                 <label for="name3">Temporada: </label><br>
                 <input type="text" id="tempo" class="form-control" name="temporada" value="{{$equipo->temporada}}"><br>
+                @error('temporada')
+                <p class="error-message">{{ $message }}</p>
+            @enderror
+
                 <label for="name3">Categoria: </label><br>
                 <input type="text" id="tempo" class="form-control"  name="categoria" value="{{$equipo->categoria}}"><br>
+                @error('categoria')
+                <p class="error-message">{{ $message }}</p>
+                 @enderror
+
                 <label for="formFile" class="form-label">Logo:</label>
                 <input class="form-control pb-1" id="formFile" type="file" name="archivo" required><br>
                 <button type="submit" class="btn btn-success mb-2" value="Guardar">Crear nuevo equipo</button>
