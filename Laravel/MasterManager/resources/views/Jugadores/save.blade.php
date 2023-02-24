@@ -116,27 +116,50 @@
         <div id="formularioCrear" class="datosjug"><!--Div obligatorio-->
             <div id="crearJugador">
                 <h4>Crear Jugador:</h4>
-                    <form action='{{url("jugadores/$jugadores->id")}}' method="POST">
+                    <form action='{{url("jugadores/$jugadores->id")}}' method="POST" enctype="multipart/form-data">
                     @csrf
                     @if($jugadores->id)
                     <input type="hidden" name="_method" value="PUT">
                     @endif 
-                     
+                    
                     <label for="nombre">Nombre: </label><br>
                     <input type="text" id="nombre" class="form-control" name="nombre" value="{{$jugadores->nombre}}"><br>
-                    <label for="nombre">Apellidos: </label><br>
+                    @error('nombre')
+                    <p class="error-message">{{ $message }}</p>
+                    @enderror
+                    <label for="apellidos">Apellidos: </label><br>
                     <input type="text" id="apellidos" class="form-control" name="apellidos" value="{{$jugadores->apellidos}}"><br>
+                    @error('apellidos')
+                    <p class="error-message">{{ $message }}</p>
+                    @enderror
                     <label for="telefono">Telefono: </label><br>
                     <input type="tel" id="telefono" class="form-control" name="telefono" value="{{$jugadores->telefono}}"><br>
+                    @error('telefono')
+                    <p class="error-message">{{ $message }}</p>
+                    @enderror
                     <label for="naci">Fecha Nacimiento: </label><br>
                     <input type="date" id="naci" class="form-control" name="fecha_nacimiento" value="{{$jugadores->fecha_nacimiento}}"><br>
+                    @error('fecha_nacimiento')
+                    <p class="error-message">{{ $message }}</p>
+                    @enderror
                     <label for="obs">Observaciones: </label><br>
                     <input type="text" id="obs" class="form-control" name="observaciones" value="{{$jugadores->observaciones}}"><br>
+                    @error('observaciones')
+                    <p class="error-message">{{ $message }}</p>
+                    @enderror
                     <label for="codConvo">codigo de Convocatoria: </label><br>
                     <input type="text" id="codConvo" class="form-control" name="cod_convocatoria" value="{{$jugadores->cod_convocatoria}}"><br>
+                    @error('cod_convocatoria')
+                    <p class="error-message">{{ $message }}</p>
+                    @enderror
                     <label for="codjug">codigo de jugador: </label><br>
                     <input type="text" id="codjug" class="form-control" name="cod_jugador" value="{{$jugadores->cod_jugador}}"><br>
-
+                    @error('cod_jugador')
+                    <p class="error-message">{{ $message }}</p>
+                    @enderror
+                    <label for="formFile" class="form-label">Logo:</label>
+                    <input class="form-control pb-1" id="formFile" type="file" name="archivo" required><br>
+                    <input class="btn btn-sucess"  type="submit" value="Enviar"><br>
                     <button type="submit" class="btn btn-success mb-2" value="Guardar">Crear nuevo jugador</button>
                 </form>
             </div>

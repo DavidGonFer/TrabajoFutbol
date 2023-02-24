@@ -21,8 +21,8 @@
     <title>MasterManager</title>
 </head>
 
-<body class=" bg-transparent " >
-    <nav class="navbar  navbar-expand* navbar-dark d-flex" id="naventreno">
+<body class=" bg-transparent ">
+    <nav class="navbar  navbar-expand* navbar-dark d-flex">
 
         <img src="{{asset('../resources/img/logoHeader.png')}}" alt="Logo de futbol" class="pl-2 float-right">
         <a class="nav-item nav-link" type="button" href="{{'../'}}">
@@ -108,10 +108,10 @@
 
 
 
-    <section class="mx-auto sectionentreno">
+    <section class="mx-auto">
         <div><!--Div obligatorio-->
 
-            <div id="crearEntren" class="datosentreno">
+            <div id="crearEntren">
                 <h4>Crear Entrenamiento:</h4>
                 <form action='{{url("entrenamientos/$entrenamientos->id")}}' method="POST">
                     @csrf
@@ -121,12 +121,24 @@
                     <label for="idEntre">id: </label><br>
                     <label for="codEntre" >Codigo de Entrenamiento: </label><br>
                     <input type="text" id="codEntre" class="form-control" name="cod_entrenamiento" value="{{$entrenamientos->cod_entrenamiento}}"><br>
+                    @error('cod_entrenamiento')
+                    <p class="error-message">{{ $message }}</p>
+                    @enderror
                     <label for="duracion">Duracion: </label><br>
                     <input type="text" id="duracion" class="form-control" name="duracion" value="{{$entrenamientos->duracion}}"><br>
+                    @error('duracion')
+                    <p class="error-message">{{ $message }}</p>
+                    @enderror
                     <label for="fecha">Fecha y hora: </label><br>
                     <input type="text" id="tempo" class="form-control" name="fecha_hora" value="{{$entrenamientos->fecha_hora}}"><br>
+                    @error('fecha_hora')
+                    <p class="error-message">{{ $message }}</p>
+                    @enderror
                     <label for="fecha">Observaciones: </label><br>
                     <input type="text" id="tempo" class="form-control" name="observaciones" value="{{$entrenamientos->observaciones}}"><br>
+                    @error('observaciones')
+                    <p class="error-message">{{ $message }}</p>
+                    @enderror
                     <button type="submit" class="btn btn-success mb-2" value="Guardar">Crear nuevo Entrenamiento</button>
                 </form>
             </div>
