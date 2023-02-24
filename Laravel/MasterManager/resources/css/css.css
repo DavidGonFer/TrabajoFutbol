@@ -159,7 +159,7 @@ a:hover {
     float: left;
 }
 .grid-item {
-    background-color: rgb(28, 101, 8);
+    background-color: rgba(0, 0, 0, 0.445);
     padding: 20px;
     border-radius: 5px;
     margin: 5px;
