@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="htmljug">
 
 <head>
     <meta charset="UTF-8">
@@ -22,10 +22,10 @@
 </head>
 
 <body class=" bg-transparent ">
-    <nav class="navbar  navbar-expand* navbar-dark d-flex">
+    <nav class="navbar  navbar-expand* navbar-dark d-flex" id="navjugadores">
 
         <img src="{{asset('../resources/img/logoHeader.png')}}" alt="Logo de futbol" class="pl-2 float-right">
-        <a class="nav-item nav-link" type="button" href="../index.html">
+        <a class="nav-item nav-link" type="button" href="{{'../'}}">
             <h1 id="masterM">MasterManager</h1>
         </a>
 
@@ -42,8 +42,8 @@
                         Equipo
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="{{'equipos/create'}}">Crear Equipo</a></li>
-                        <li><a class="dropdown-item" href="{{'equipos'}}">Visualizar Equipos</a></li>
+                        <li><a class="dropdown-item" href="{{'../equipos/create'}}">Crear Equipo</a></li>
+                        <li><a class="dropdown-item" href="{{'../equipos'}}">Visualizar Equipos</a></li>
                     </ul>
                 </div>
                 <div class="dropdown">
@@ -52,8 +52,8 @@
                         Jugadores
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                        <li><a class="dropdown-item" href="{{'jugadores/create'}}">Crear Jugador</a></li>
-                        <li><a class="dropdown-item" href="{{'jugadores'}}">Visualizar los Jugadores</a></li>
+                        <li><a class="dropdown-item" href="{{'./create'}}">Crear Jugador</a></li>
+                        <li><a class="dropdown-item" href="{{'./'}}">Visualizar los Jugadores</a></li>
                     </ul>
                 </div>
                 <div class="dropdown">
@@ -62,8 +62,8 @@
                         Entrenamientos
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
-                        <li><a class="dropdown-item" href="{{'entrenamientos/create'}}">Crear Entrenamiento</a></li>
-                        <li><a class="dropdown-item" href="{{'entrenamientos'}}">Visualizar los Entrenamientos</a></li>
+                        <li><a class="dropdown-item" href="{{'../entrenamientos/create'}}">Crear Entrenamiento</a></li>
+                        <li><a class="dropdown-item" href="{{'../entrenamientos'}}">Visualizar los Entrenamientos</a></li>
                     </ul>
                 </div>
 
@@ -74,8 +74,8 @@
                         Asistencias
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
-                        <li><a class="dropdown-item" href="{{'asistencias/create'}}">Crear Asistencias</a></li>
-                        <li><a class="dropdown-item" href="{{'asistencias'}}">Visualizar los Entrenamientos</a></li>
+                        <li><a class="dropdown-item" href="{{'../asistencias/create'}}">Crear Asistencias</a></li>
+                        <li><a class="dropdown-item" href="{{'../asistencias'}}">Visualizar los Entrenamientos</a></li>
                     </ul>
                 </div>
 
@@ -86,15 +86,10 @@
                         Partido
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton5">
-                        <li><a class="dropdown-item" href="{{'partidos/create'}}">Crear Partido</a></li>
-                        <li><a class="dropdown-item" href="{{'partidos'}}">Visualizar los Partidos</a></li>
+                        <li><a class="dropdown-item" href="{{'../partidos/create'}}">Crear Partido</a></li>
+                        <li><a class="dropdown-item" href="{{'../partidos'}}">Visualizar los Partidos</a></li>
                     </ul>
                 </div>
-
-            </div>
-
-        </div>
-    </nav>
 
                 <div class="dropdown">
                     <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton5" data-toggle="dropdown"
@@ -102,8 +97,8 @@
                         Convocatorias
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton5">
-                        <li><a class="dropdown-item" href="{{'convocatorias/create'}}">Crear Convocatoria</a></li>
-                        <li><a class="dropdown-item" href="{{'convocatorias'}}">Visualizar las Convocatorias</a></li>
+                        <li><a class="dropdown-item" href="{{'../convocatorias/create'}}">Crear Convocatoria</a></li>
+                        <li><a class="dropdown-item" href="{{'../convocatorias'}}">Visualizar las Convocatorias</a></li>
                     </ul>
                 </div>
 
@@ -112,11 +107,13 @@
         </div>
     </nav>
 
+                
 
 
 
-    <section class="mx-auto" id="sectionCrear">
-        <div id="formularioCrear"><!--Div obligatorio-->
+
+    <section class="sectionjug mx-auto" id="sectionCrear" >
+        <div id="formularioCrear" class="datosjug"><!--Div obligatorio-->
             <div id="crearJugador">
                 <h4>Crear Jugador:</h4>
                     <form action='{{url("jugadores/$jugadores->id")}}' method="POST">
