@@ -16,7 +16,31 @@ html{
     overflow-x: hidden;
 }
 #htmlentreno{
-    background: url("../img/bg.jpg");
+    background: url("../img/bg3.jpg");
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+}
+#htmlpartido{
+    background: url("../img/bg4.jpg");
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+}
+#htmlasistencias{
+    background: url("../img/bg5.jpg");
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+}
+#htmlconvocatorias{
+    background: url("../img/bg6.jpg");
     background-position: center center;
     background-attachment: fixed;
     background-repeat: no-repeat;
