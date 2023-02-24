@@ -22,7 +22,6 @@ class CreateJugadoresTable extends Migration
             $table->string('apellidos');
             $table->string('nombre');
             $table->string('fecha_nacimiento');
-            $table->string('logo');
             $table->timestamps();
         });
     }

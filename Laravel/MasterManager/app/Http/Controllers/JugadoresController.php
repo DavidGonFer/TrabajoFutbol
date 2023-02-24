@@ -41,15 +41,6 @@ class JugadoresController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'cod_jugador' => 'required|Integer|max:3',
-            'cod_convocatoria' => 'required|Integer|max:3',
-            'nombre' => 'required|String|max:20',
-            'apellidos' => 'required|String|max:30',
-            'telefono' => 'required|Integer|min:9',
-            'observaciones' => 'required|String|max:50',
-         ]);
-
         $jugadores = new Jugadore();
         $jugadores -> cod_jugador = $request -> cod_jugador;
         $jugadores -> cod_convocatoria = $request -> cod_convocatoria;
@@ -58,13 +49,8 @@ class JugadoresController extends Controller
         $jugadores -> apellidos = $request -> apellidos;
         $jugadores -> telefono = $request -> telefono;
         $jugadores -> observaciones = $request -> observaciones;
-        $file=$request->file('archivo');
-        $nombre=$file->getClientOriginalName();
-        $file->move(public_path().'/imagenes/',$nombre);
-        $jugadores->logo=$nombre;
-        $jugadores->save();
         $jugadores -> save();
-        return Redirect::to('jugadores');
+        return Redirect::to('jugadores')->with('jugadoree','Se hac reado correctamente');
     }
 
     /**
@@ -110,7 +96,6 @@ class JugadoresController extends Controller
         $jugadores -> telefono = $request -> telefono;
         $jugadores -> observaciones = $request -> observaciones;
         $jugadores -> save();
-        return Redirect::to('jugadores');
     }   
 
     /**
@@ -123,6 +108,6 @@ class JugadoresController extends Controller
     {
         $jugadores = Jugadore::find($id);
         $jugadores -> delete();
-        return Redirect::to('jugadores');
+        return Redirect::to('jugadores') -> with('jugadores', 'El jugador ha sido eliminado correctamente');
     }
 }

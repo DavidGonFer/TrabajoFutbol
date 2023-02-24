@@ -84,12 +84,6 @@ class EntrenamientoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'cod_entrenamiento' => 'required|Integer|max:3',
-            'duracion' => 'required|Integer|max:10',
-            'observaciones' => 'required|String|max:50',
-         ]);
-         
         $entrenamientos = Entrenamiento::find($id);
         $entrenamientos -> cod_entrenamiento = $request -> cod_entrenamiento;
         $entrenamientos -> fecha_hora = $request -> fecha_hora;
@@ -109,6 +103,6 @@ class EntrenamientoController extends Controller
     {
         $entrenamientos = Entrenamiento::find($id);
         $entrenamientos -> delete();
-        return Redirect::to('entrenamientos');
+        return Redirect::to('entrenamientos') -> with('entrenamientos', 'El entrenamiento ha sido eliminado correctamente');
     }
 }

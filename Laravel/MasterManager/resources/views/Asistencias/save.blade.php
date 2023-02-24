@@ -122,24 +122,12 @@
                     @endif 
                     <label for="codEntre" >Codigo de Entrenamiento: </label><br>
                     <input type="text" id="codEntre" class="form-control" name="cod_entrenamiento" value="{{$asistencias->cod_entrenamiento}}"><br>
-                    @error('cod_entrenamiento')
-                    <p class="error-message">{{ $message }}</p>
-                    @enderror
                     <label for="codEntre" >Codigo del Jugador: </label><br>
                     <input type="text" id="codJug" class="form-control" name="cod_jugador" value="{{$asistencias->cod_jugador}}"><br>
-                    @error('cod_jugador')
-                    <p class="error-message">{{ $message }}</p>
-                    @enderror
                     <label for="Asistencia">Asistencia: </label><br>
                     <input type="text" id="asistencia" class="form-control" name="asistencia" value="{{$asistencias->asistencia}}"><br>
-                    @error('asistencia')
-                    <p class="error-message">{{ $message }}</p>
-                    @enderror
                     <label for="Asistencia">Ha sido justificado: </label><br>
                     <input type="text" id="asistencia" class="form-control" name="asistencia_nojustificada" value="{{$asistencias->asistencia_nojustificada}}"><br>
-                    @error('asistencia_nojustificada')
-                    <p class="error-message">{{ $message }}</p>
-                    @enderror
                     <button type="submit" class="btn btn-success mb-2" value="Guardar">Crear Nueva Asistencia</button>
             </div>
             
